@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Pomodoro Timer</ion-title>
+    </ion-navbar>
+   </ion-header>
+    
+   <ion-content padding>
+    
+   <div>
+    <ion-item>
+      <h1 text-center>{{displayTime}}</h1>
+    </ion-item>
+    <ion-fab bottom right *ngIf="runTimer && hasStarted && !hasFinished">
+      <button ion-fab (click)="pauseTimer()">
+    <ion-icon name="pause"></ion-icon>
+    </button>
+    </ion-fab>
+    <ion-fab bottom right *ngIf="!runTimer && hasStarted && !hasFinished">
+      <button ion-fab (click)="resumeTimer()">
+       <ion-icon name="play"></ion-icon>
+       </button>
+    </ion-fab>
+    <ion-fab bottom right *ngIf="!hasStarted">
+      <button ion-fab (click)="startTimer()" item-right>
+       <ion-icon name="play"></ion-icon>
+       </button>
+    </ion-fab>
+    <ion-fab bottom left *ngIf="!runTimer && (hasStarted || hasFinished) || hasFinished">
+      <button ion-fab color="danger" (click)="initTimer()" item-left>
+       <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-fab>
+   </div>
+    
+   </ion-content>

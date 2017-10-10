@@ -1,14 +1,39 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      VŠE Escape Game
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+    <ion-title center text-center><ion-icon name="log-in" center text-center></ion-icon> Escape Game - Here We Come</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding="10" center text-center >
+  Welcome to ESCAPE GAME!
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    Enter the game gere!
   </p>
+
+  <ion-list>
+    
+      <ion-item>
+        <ion-label  floating>Answer</ion-label>
+        <ion-input item-width="10px" type="text" [(ngModel)]="answer"></ion-input>
+      </ion-item>
+    
+      
+    
+    </ion-list>
+  <button ion-button (click)="goToOtherPage()" color="light">Proceed</button>
+
+  <timer #timer timeInSeconds="1"></timer>
+ 
 </ion-content>
