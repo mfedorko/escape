@@ -1,0 +1,39 @@
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+    <ion-title><ion-icon name="log-in"></ion-icon> Escape Game - Here We Come</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  Welcome to ESCAPE GAME!
+  <p>
+    TAAAASK1, input answer to this challenge
+  </p>
+
+  <ion-list>
+      
+        <ion-item>
+          <ion-label floating>Answer2</ion-label>
+          <ion-input type="text" [(ngModel)]="answer"></ion-input>
+        </ion-item>
+      
+        
+      
+      </ion-list>
+    <button ion-button (click)="goToOtherPage()" color="light">Proceed</button>
+    <timer #timer timeInSeconds{{resumeTime}}></timer>
+</ion-content>
