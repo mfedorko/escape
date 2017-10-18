@@ -30,10 +30,16 @@ console.log(this.resumeTime);
   goToOtherPage() {
     if ( this.answer!=undefined ) {
       if (this.answer.toUpperCase()=="ANSWER2" ) {
-      this.navCtrl.push(Task2Page);
+      this.navCtrl.push(Task2Page,{
+        secondsRemaining: this.timer.getSecondsRemaining()}
+    
+    
+    
+              );
+    };
     }
     }
 
   }
-}
+
 

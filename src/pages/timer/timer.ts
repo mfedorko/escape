@@ -80,4 +80,8 @@ export class TimerComponent {
     getSecondsRemaining(){
         return this.timer.secondsRemaining;
     }
+    setRunTimer(val:boolean){
+        this.timer.runTimer=val;
+
+    }
 }

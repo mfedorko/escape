@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TimerComponent } from '../timer/timer';
+import { ViewChild } from '@angular/core';
 
 /**
  * Generated class for the WinpagePage page.
@@ -14,12 +16,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'winpage.html',
 })
 export class WinPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  answer: string;
+  resumeTime: string;
+  @ViewChild(TimerComponent) timer: TimerComponent;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams)
+   {
+    
+  this.resumeTime = this.navParams.get('secondsRemaining');
+console.log(this.resumeTime); 
+console.log(this.timer);
+//this.timer.setRunTimer(false);
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WinPage');
+  ngOnInit() {
+    setTimeout(() => {
+      this.timer.resumeTimer();
+      this.timer.setRunTimer(false);
+      console.log(this.timer);
+    }, 1000)
+    
   }
+  
+    }
+    
+  
 
-}
+
