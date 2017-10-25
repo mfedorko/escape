@@ -64,9 +64,12 @@ getDiff(){
             );
   } else {
     this.presentAlert();
+    this.timer.pauseTimer();
     this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
     this.timer.initTimer();
     this.timer.resumeTimer();
+  
+    
     
   }
   }

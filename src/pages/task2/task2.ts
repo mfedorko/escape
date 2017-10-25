@@ -29,7 +29,7 @@ export class Task2Page {
 
   ngOnInit() {
     setTimeout(() => {
-      this.timer.resumeTimer();
+      this.timer.startTimer();
     }, 1000)
   }
   goToOtherPage() {
@@ -39,6 +39,7 @@ export class Task2Page {
         secondsRemaining: this.timer.getSecondsRemaining()});
     }else {
       this.presentAlert();
+      this.timer.pauseTimer();
       this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
       this.timer.initTimer();
       this.timer.resumeTimer();

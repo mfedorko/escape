@@ -39,8 +39,11 @@ export class Task5Page {
     }else {
       this.presentAlert();
       this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
+      console.log(this.timer.getSecondsRemaining()+60) ;
       this.timer.initTimer();
+      console.log(this.timer.getSecondsRemaining()+60) ;
       this.timer.resumeTimer();   
+      console.log(this.timer.getSecondsRemaining()+60) ;
     };
     }
     }

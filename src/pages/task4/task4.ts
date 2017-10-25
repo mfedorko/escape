@@ -30,7 +30,7 @@ export class Task4Page {
 
   ngOnInit() {
     setTimeout(() => {
-      this.timer.resumeTimer();
+      this.timer.startTimer();
     }, 1000)
   }
   goToOtherPage() {
@@ -42,9 +42,13 @@ export class Task4Page {
 );
     }else {
       this.presentAlert();
+      this.timer.pauseTimer();
       this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
+      console.log(this.timer.getSecondsRemaining()+60) ;
       this.timer.initTimer();
+      console.log(this.timer.getSecondsRemaining()+60) ;
       this.timer.resumeTimer();
+      console.log(this.timer.getSecondsRemaining()+60) ;
       
     };
     }

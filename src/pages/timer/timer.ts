@@ -37,9 +37,11 @@ export class TimerComponent {
     }
  
     startTimer() {
-        this.timer.hasStarted = true;
+        
         this.timer.runTimer = true;
+        if (! this.timer.hasStarted)
         this.timerTick();
+        this.timer.hasStarted = true;
     }
  
     pauseTimer() {
@@ -47,7 +49,8 @@ export class TimerComponent {
     }
  
     resumeTimer() {
-        this.startTimer();
+        this.timer.runTimer = true;
+        //this.startTimer();
     }
  
     timerTick() {

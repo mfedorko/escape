@@ -19,7 +19,7 @@ export class Task3Page {
   }
   ngOnInit() {
     setTimeout(() => {
-      this.timer.resumeTimer();
+      this.timer.startTimer();
     }, 1000)
   }
 
@@ -40,10 +40,10 @@ export class Task3Page {
         secondsRemaining: this.timer.getSecondsRemaining()}  );
     }else {
       this.presentAlert();
+      this.timer.pauseTimer();
       this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
       this.timer.initTimer();
-      this.timer.resumeTimer();
-      
+      this.timer.resumeTimer();    
     };
     }
     }
