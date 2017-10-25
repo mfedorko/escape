@@ -21,21 +21,19 @@
   <ion-content padding>
     Welcome to ESCAPE GAME!
     <p>
-      Víš, že buddy pomáhala s ubytováním (vyjádřit, že je ze země kterou spravuje) jeho spřízněná duše na škole na OZS. Prohodili jste s ní pár vět a pamatuješ si, že mluvila o … ,
-      Vzpoměň si na jeji křestní jméno.
-      
+      V ústech ještě pořád cítíš pachuť oliv ze včerších drinků. Potřebuješ růžové štěstí, nachází se v místnosti, která se nachází v nejnovější z budov a její číslo ti uvízlo v hlavně ze včerejšího večera (P.S.: protřepat, nemýchat).+ Musíš zjistit co se v této místnosti nachází.
     </p>
   
     <ion-list>
         
           <ion-item>
-            <ion-label floating>Jméno</ion-label>
+            <ion-label floating>Místnost</ion-label>
             <ion-input type="text" [(ngModel)]="answer"></ion-input>
           </ion-item>
         
           
         
         </ion-list>
-      <button ion-button (click)="goToOtherPage()" color="light">Odpovědět</button>
+      <button ion-button (click)="goToOtherPage()" color="light">Proceed</button>
       <timer #timer timeInSeconds={{resumeTime}}></timer>
   </ion-content>

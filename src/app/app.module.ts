@@ -9,6 +9,9 @@ import { HomePage } from '../pages/home/home';
 import { task1 } from '../pages/task1/task1';
 import { IntroPage } from '../pages/intro/intro';
 import { Task2Page } from "../pages/task2/task2";
+import { Task3Page } from "../pages/task3/task3";
+import { Task4Page } from "../pages/task4/task4";
+import { Task5Page } from "../pages/task5/task5";
 import { WinPage } from "../pages/winpage/winpage";
 import { TimerComponent } from '../pages/timer/timer';
 @NgModule({
@@ -18,6 +21,9 @@ import { TimerComponent } from '../pages/timer/timer';
     task1,
     IntroPage,
     Task2Page,
+    Task3Page,
+    Task4Page,
+    Task5Page,
     WinPage,
     TimerComponent
   ],
@@ -33,6 +39,9 @@ import { TimerComponent } from '../pages/timer/timer';
     task1,
     IntroPage,
     Task2Page,
+    Task3Page,
+    Task4Page,
+    Task5Page,
     WinPage,
     TimerComponent
   ],

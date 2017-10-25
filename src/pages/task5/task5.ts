@@ -1,22 +1,25 @@
-import { Task3Page } from "../task3/task3";
+import { WinPage } from "../winpage/winpage";
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
 @Component({
-  selector: 'page-task2',
-  templateUrl: 'task2.html'
+  selector: 'page-task5',
+  templateUrl: 'task5.html'
 })
-export class Task2Page {
+export class Task5Page {
   answer: string;
   resumeTime: string;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
               public navParams: NavParams)
    {
+    
   this.resumeTime = this.navParams.get('secondsRemaining');
+console.log(this.resumeTime); 
+
+
   }
-  
   ngOnInit() {
     setTimeout(() => {
       this.timer.resumeTimer();
@@ -24,15 +27,13 @@ export class Task2Page {
   }
   goToOtherPage() {
     if ( this.answer!=undefined ) {
-      if (this.answer.toUpperCase()=="BARBORA" ) {
-      this.navCtrl.push(Task3Page,{
-        secondsRemaining: this.timer.getSecondsRemaining()});
-    }else {
-      this.presentAlert();
-      this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
-      this.timer.initTimer();
-      this.timer.resumeTimer();
-      
+      if (this.answer.toUpperCase()=="ANSWER3" ) {
+      this.navCtrl.push(WinPage,{
+        secondsRemaining: this.timer.getSecondsRemaining()}
+    
+    
+    
+              );
     };
     }
     }

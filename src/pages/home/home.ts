@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { task1 } from '../task1/task1';
 import { ViewChild } from '@angular/core';
 import { TimerComponent } from '../timer/timer';
-import * as moment from 'moment';
-import 'moment/locale/cs';
+
+
 
 @Component({
   selector: 'page-home',
@@ -14,12 +14,15 @@ export class HomePage {
    answer: string;
    currentDate: Date;
    initialDate: Date;
+  
    
    
    @ViewChild(TimerComponent) timer: TimerComponent;
-  constructor(public navCtrl: NavController) {
-    
-  }
+   constructor(public alertCtrl: AlertController 
+    , public navCtrl: NavController) { }
+   
+   
+  //constructor(public navCtrl: NavController, alertCtrl: AlertController){ }
   setInitDate(){
     this.initialDate = new Date();
   }
@@ -35,25 +38,36 @@ getDiff(){
       return this.currentDate;
 }
   ngOnInit() {
-    @ViewChild(Mome) timer: TimerComponent;
-    moment.locale('cs');
-    console.log(moment.locale());
-    console.log(this.getMyTime());
+    
     setTimeout(() => {
       this.timer.startTimer();
     }, 1000);
   }
+  
+  
+  
+  presentAlert() {
+    
+    const alert = this.alertCtrl.create({
+      title: 'Špatná odpověď',
+      subTitle: 'Odpověděl jsi špatně',
+      buttons: ['Zkusím znova']
+    });
+    alert.present();
+  }
   goToOtherPage() {
-    console.log(this.timer.getSecondsRemaining());
-    console.log(this.getDiff());
+  
   if ( this.answer!=undefined ) {
-    if (this.answer.toUpperCase()=="ANSWER" ) {
+    if (this.answer.toUpperCase()=="2.8." ) {
     this.navCtrl.push(task1, {
       secondsRemaining: this.timer.getSecondsRemaining()}
-  
-  
-  
             );
+  } else {
+    this.presentAlert();
+    this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
+    this.timer.initTimer();
+    this.timer.resumeTimer();
+    
   }
   }
 

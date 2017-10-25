@@ -21,21 +21,19 @@
   <ion-content padding>
     Welcome to ESCAPE GAME!
     <p>
-      Víš, že buddy pomáhala s ubytováním (vyjádřit, že je ze země kterou spravuje) jeho spřízněná duše na škole na OZS. Prohodili jste s ní pár vět a pamatuješ si, že mluvila o … ,
-      Vzpoměň si na jeji křestní jméno.
-      
+      TAAAASK2, input answer to this challenge
     </p>
   
     <ion-list>
         
           <ion-item>
-            <ion-label floating>Jméno</ion-label>
+            <ion-label floating>Answer3</ion-label>
             <ion-input type="text" [(ngModel)]="answer"></ion-input>
           </ion-item>
         
           
         
         </ion-list>
-      <button ion-button (click)="goToOtherPage()" color="light">Odpovědět</button>
+      <button ion-button (click)="goToOtherPage()" color="light">Proceed</button>
       <timer #timer timeInSeconds={{resumeTime}}></timer>
   </ion-content>
