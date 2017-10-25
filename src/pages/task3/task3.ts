@@ -1,6 +1,6 @@
 import { Task4Page } from "../task4/task4";
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
 @Component({
@@ -12,28 +12,38 @@ export class Task3Page {
   resumeTime: string;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
-              public navParams: NavParams)
+              public navParams: NavParams,
+              public alertCtrl: AlertController)
    {
-    
   this.resumeTime = this.navParams.get('secondsRemaining');
-console.log(this.resumeTime); 
-
-
   }
   ngOnInit() {
     setTimeout(() => {
       this.timer.resumeTimer();
     }, 1000)
   }
+
+  presentAlert() {
+    
+    const alert = this.alertCtrl.create({
+      title: 'Špatná odpověď',
+      subTitle: 'Odpověděl jsi špatně',
+      buttons: ['Zkusím znova']
+    });
+    alert.present();
+  }
+
   goToOtherPage() {
     if ( this.answer!=undefined ) {
       if (this.answer=="3" ) {
       this.navCtrl.push(Task4Page,{
-        secondsRemaining: this.timer.getSecondsRemaining()}
-    
-    
-    
-              );
+        secondsRemaining: this.timer.getSecondsRemaining()}  );
+    }else {
+      this.presentAlert();
+      this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
+      this.timer.initTimer();
+      this.timer.resumeTimer();
+      
     };
     }
     }

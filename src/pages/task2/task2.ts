@@ -1,6 +1,6 @@
 import { Task3Page } from "../task3/task3";
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
 @Component({
@@ -12,11 +12,21 @@ export class Task2Page {
   resumeTime: string;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
-              public navParams: NavParams)
+              public navParams: NavParams,
+              public alertCtrl: AlertController)
    {
   this.resumeTime = this.navParams.get('secondsRemaining');
   }
-  
+  presentAlert() {
+    
+    const alert = this.alertCtrl.create({
+      title: 'Špatná odpověď',
+      subTitle: 'Odpověděl jsi špatně',
+      buttons: ['Zkusím znova']
+    });
+    alert.present();
+  }
+
   ngOnInit() {
     setTimeout(() => {
       this.timer.resumeTimer();
