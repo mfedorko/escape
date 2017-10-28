@@ -14,6 +14,7 @@ import { Task4Page } from "../pages/task4/task4";
 import { Task5Page } from "../pages/task5/task5";
 import { WinPage } from "../pages/winpage/winpage";
 import { TimerComponent } from '../pages/timer/timer';
+import { NativeAudio } from '@ionic-native/native-audio';
 @NgModule({
   declarations: [
     MyApp,
@@ -25,12 +26,14 @@ import { TimerComponent } from '../pages/timer/timer';
     Task4Page,
     Task5Page,
     WinPage,
-    TimerComponent
+    TimerComponent,
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+   
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,11 +46,13 @@ import { TimerComponent } from '../pages/timer/timer';
     Task4Page,
     Task5Page,
     WinPage,
-    TimerComponent
+    TimerComponent,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

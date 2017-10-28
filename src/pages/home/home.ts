@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController} from 'ionic-angular';
 import { task1 } from '../task1/task1';
 import { ViewChild } from '@angular/core';
 import { TimerComponent } from '../timer/timer';
@@ -14,8 +14,6 @@ export class HomePage {
    answer: string;
    currentDate: Date;
    initialDate: Date;
-  
-   
    
    @ViewChild(TimerComponent) timer: TimerComponent;
    constructor(public alertCtrl: AlertController 
@@ -58,7 +56,7 @@ getDiff(){
   goToOtherPage() {
   
   if ( this.answer!=undefined ) {
-    if (this.answer.toUpperCase()=="2.8." ) {
+    if (this.answer.toUpperCase()=="02.08." ) {
     this.navCtrl.push(task1, {
       secondsRemaining: this.timer.getSecondsRemaining()}
             );
