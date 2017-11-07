@@ -12,14 +12,21 @@ import { TimerComponent } from '../timer/timer';
 })
 export class HomePage {
    answer: string;
+   answer2: Date;
    currentDate: Date;
    initialDate: Date;
    
    @ViewChild(TimerComponent) timer: TimerComponent;
    constructor(public alertCtrl: AlertController 
-    , public navCtrl: NavController) { }
+    , public navCtrl: NavController) { this.setInitDate();}
    
    
+    public event = {
+      month: '1990-02-19',
+      timeStarts: '07:43',
+      timeEnds: '2017-12-15'
+    }
+
   //constructor(public navCtrl: NavController, alertCtrl: AlertController){ }
   setInitDate(){
     this.initialDate = new Date();
@@ -53,10 +60,23 @@ getDiff(){
     });
     alert.present();
   }
+reallyHintAlert(){
+  const alert = this.alertCtrl.create({
+    title: 'Nápověda',
+    subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli',
+    buttons: ['Zobraz nápovědu','Zrušit' ]
+  });
+  alert.present();
+
+}
+  hintAlert
+
   goToOtherPage() {
   
-  if ( this.answer!=undefined ) {
-    if (this.answer.toUpperCase()=="02.08." ) {
+  if ( this.event.timeEnds!=undefined ) {
+    console.log("from date picker: " + this.event.timeEnds);
+    console.log("from date picker: " + this.answer);
+    if (this.event.timeEnds=="2017-08-02" ) {
     this.navCtrl.push(task1, {
       secondsRemaining: this.timer.getSecondsRemaining()}
             );

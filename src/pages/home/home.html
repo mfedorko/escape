@@ -39,10 +39,11 @@
       K prvnímu poodhalení ti poslouží samotný Sir Winston Ch., opírající se monumemtálně o svou holi. Především něco na jeho kabátu zaujalo tvou pozornost. Je možné, že zde najdeš souvislost s konáním akce? 
       </p>
       <ion-label ><h4>Úkol</h4></ion-label>
-  <p> Zkus popřemýšlet, jak by mohl být kabát sochy WC spojen s datem, kdy se akce konala.
+  <p> Zkus popřemýšlet, jak by mohl být kabát sochy Winstona Churchulla spojen s datem, kdy se akce konala.
+
     </p>
 
-    <p> <ion-icon name="alert"></ion-icon>Hint: Den je čtyřnásobek měsíce.
+    <p> <ion-icon name="alert"></ion-icon>Hint: Měsíc je čtyřnásobek dne.
     </p>
 
 
@@ -50,12 +51,20 @@
 
   <ion-list>
       <ion-item>
-        <ion-label floating >Odpověď ve formátu dd.mm.</ion-label>
-        <ion-input item-width="10px" type="text" [(ngModel)]="answer"></ion-input>
-      </ion-item>
-    
-  <button ion-button (click)="goToOtherPage()" >Odpovědět</button>
+          <ion-label>Datum party:</ion-label>
+          <ion-datetime displayFormat="DD. MMMM" pickerFormat="DD. MMMM" [(ngModel)]="this.event.timeEnds"></ion-datetime>
+        </ion-item>
 
+<ion-row>
+  <ion-col>
+  <button ion-button (click)="goToOtherPage()" >Odpovědět</button>
+</ion-col>
+<ion-col>
+    <button ion-button (click)="reallyHintAlert()" >Nápověda</button>
+  </ion-col>
+</ion-row>  
+  
+  
   <timer #timer timeInSeconds="1"></timer>
   <p font-size="2px"><ion-icon name="information"></ion-icon> Velmi dobře si pamatuj odpovědi na jednotlivé otázky. Budou se ti hodit na konci hry.</p>
 </ion-list> 

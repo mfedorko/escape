@@ -27,21 +27,17 @@
   <h4>Úkol</h4>
   <p>Tvým úkolem je zjistit přibližný věk (věkové rozmezí) tvého kamaráda pomocí těchto indícií.
   </p>
-   <p> Hint: přibližný věk zjistíš životným datumem osobnosti (rok), která se zasloužila o založení FIS na VŠE (spodní hranice), a sečtením “hvězd” (horní hranice). Své  výpočty vztáhni ke konci roku 2017</p>
+   <p> Hint: přibližný věk zjistíš počtem let od † osobnosti, která se zasloužila o založení FIS na VŠE (spodní hranice), a sečtením “hvězd” (horní hranice). Své  výpočty vztáhni ke konci roku 2017</p>
 
   <ion-list>
-      
-        <ion-item>
-          <ion-label floating>Věk od:</ion-label>
-          <ion-input type="text" [(ngModel)]="answer1"></ion-input>
+      <ion-item>
+          <ion-label>Věk od:</ion-label>
+          <ion-datetime displayFormat="mm" pickerFormat="mm" [(ngModel)]="this.event.timeStarts"></ion-datetime>
         </ion-item>
         <ion-item>
-          <ion-label floating>Věk do:</ion-label>
-          <ion-input type="text" [(ngModel)]="answer2"></ion-input>
-        </ion-item>
-      
-        
-      
+            <ion-label>Věk do:</ion-label>
+            <ion-datetime displayFormat="mm" pickerFormat="mm" [(ngModel)]="this.event.timeEnds"></ion-datetime>
+          </ion-item>      
       </ion-list>
     <button ion-button (click)="goToOtherPage()" color="light">Odpovědět</button>
     <timer #timer timeInSeconds={{resumeTime}}></timer>

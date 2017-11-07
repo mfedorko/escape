@@ -11,6 +11,8 @@ import { NativeAudio } from '@ionic-native/native-audio';
 export class Task3Page {
   answer: string;
   resumeTime: string;
+  testRadioOpen: boolean;
+  testRadioResult;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -21,6 +23,7 @@ export class Task3Page {
   }
   ngOnInit() {
     setTimeout(() => {
+      console.log(this.timer);
       this.timer.startTimer();
     }, 1000);
     this.nativeAudio.preloadComplex('song1', 'sound/sound.mp3', 1, 1, 0);
@@ -45,10 +48,62 @@ pauseMusic(){
   this.nativeAudio.stop('song1')
 }
   
+doRadio() {
+  let alert = this.alertCtrl.create();
+  alert.setTitle('Číšlo fakulty:');
+
+  alert.addInput({
+    type: 'radio',
+    label: '1',
+    value: '1',
+    checked: true
+  });
+
+  alert.addInput({
+    type: 'radio',
+    label: '2',
+    value: '2'
+  });
+
+  alert.addInput({
+    type: 'radio',
+    label: '3',
+    value: '3'
+  });
+
+  alert.addInput({
+    type: 'radio',
+    label: '4',
+    value: '4'
+  });
+
+  alert.addInput({
+    type: 'radio',
+    label: '5',
+    value: 'purple'
+  });
+
+  
+
+  alert.addButton('Cancel');
+  alert.addButton({
+    text: 'Ok',
+    handler: data => {
+      console.log('Radio data:', data);
+      this.testRadioOpen = false;
+      this.testRadioResult = data;
+    }
+  });
+
+  alert.present().then(() => {
+    this.testRadioOpen = true;
+  });
+}
+
 
   goToOtherPage() {
-    if ( this.answer!=undefined ) {
-      if (this.answer=="4" ) {
+    if ( this.testRadioResult!=undefined ) {
+      if (this.testRadioResult=="4" ) {
         this.pauseMusic();
       this.navCtrl.push(Task4Page,{
         secondsRemaining: this.timer.getSecondsRemaining()}  );

@@ -42,9 +42,9 @@
     <ion-list>
         <h4>Úkol</h4>
         <p>Zjisti číslo fakulty, kterou tvůj buddík navštěvuje</p>
-          <ion-item>
+          <ion-item> 
             <ion-label floating>Číslo fakulty buddíka</ion-label>
-            <ion-input type="text" [(ngModel)]="answer"></ion-input>
+            <ion-input readonly  (click)="doRadio()"  [(ngModel)]="testRadioResult"></ion-input> 
           </ion-item>
         
           

@@ -29,15 +29,23 @@ export class task1 {
     });
     alert.present();
   }
+  public event = {
+    month: '1990-02-19',
+    timeStarts: '07:15',
+    timeEnds: '07:15'
+  }
   ngOnInit() {
     setTimeout(() => {
       this.timer.startTimer();
     }, 1000)
   }
   goToOtherPage() {
-    
-    if ( this.answer1!=undefined && this.answer2!=undefined ) {
-      if (this.answer1=="23" && this.answer2=="28"  ) {
+    console.log( this.event.timeStarts );
+    console.log( this.event.timeEnds );
+
+    if ( this.event.timeStarts!=undefined && this.event.timeEnds!=undefined ) {
+      
+      if (this.event.timeStarts=='07:23' && this.event.timeEnds=='07:28'  ) {
       this.navCtrl.push(Task2Page,{
         secondsRemaining: this.timer.getSecondsRemaining()}   );
     }else {
