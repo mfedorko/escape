@@ -12,9 +12,11 @@ import { Task2Page } from "../pages/task2/task2";
 import { Task3Page } from "../pages/task3/task3";
 import { Task4Page } from "../pages/task4/task4";
 import { Task5Page } from "../pages/task5/task5";
+import { Task6Page } from "../pages/task6/task6";
 import { WinPage } from "../pages/winpage/winpage";
 import { TimerComponent } from '../pages/timer/timer';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { TabProfilePage } from "../pages/tab-profile/tab-profile";
 @NgModule({
   declarations: [
     MyApp,
@@ -25,15 +27,16 @@ import { NativeAudio } from '@ionic-native/native-audio';
     Task3Page,
     Task4Page,
     Task5Page,
+    Task6Page,
     WinPage,
     TimerComponent,
-    
+    TabProfilePage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-   
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,15 +48,17 @@ import { NativeAudio } from '@ionic-native/native-audio';
     Task3Page,
     Task4Page,
     Task5Page,
+    Task6Page,
     WinPage,
     TimerComponent,
-    
+    TabProfilePage,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     NativeAudio,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

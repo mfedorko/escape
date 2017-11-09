@@ -1,14 +1,14 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title></title>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> -->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> -->
   <!--  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
 
   <!-- <link rel="stylesheet" type="text/css" href="../../../dist/css/ionic.material-design-lite.css"> -->
 
   <!-- /<script src="../../../dist/js/ionic.material-design-lite.bundle.js"></script> -->
- <!-- <script src="js/app.js"></script> -->
- 
+  <!-- <script src="js/app.js"></script> -->
+
 </head>
 <ion-header>
   <ion-navbar>
@@ -18,8 +18,8 @@
   </ion-navbar>
 </ion-header>
 <!--<body class="platform-android use-material-icons" ng-app="material-starter"> -->
-  
- 
+
+
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -27,45 +27,57 @@
       <ion-icon name="menu">
       </ion-icon>
     </button>
-    <ion-title center text-center><ion-icon center text-center></ion-icon> Escape Game</ion-title>
+    <ion-title center text-center>
+      <ion-icon center text-center></ion-icon> Escape Game</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding="0" center text-left >
- 
-  <ion-label ><h4>Udáslost</h4></ion-label>
-  <p> Po předešlé noci se probouzíš před sochou Winstona Churchilla s urputnou bolestí hlavy a dočasným výpadkem paměti. Po několika minutách potřebných na zorientování si vybavuješ, že jsi se zúčastnil akce Nation2Nation, kam jsi vzal i svého nového buddyho - zahraničního studenta, který ti byl přidělen v rámci výměnného programu Erasmus+. Avšak ať se snažíš sebevíc, nedokážeš si vybavit kolikátého vlastně je, kdo je tvým kamarádem, ani co jste celou noc prováděli. Tvým úkolem tedy je zjistit jeho identitu a odkrýt události minulé noci.
-      K prvnímu poodhalení ti poslouží samotný Sir Winston Ch., opírající se monumemtálně o svou holi. Především něco na jeho kabátu zaujalo tvou pozornost. Je možné, že zde najdeš souvislost s konáním akce? 
-      </p>
-      <ion-label ><h4>Úkol</h4></ion-label>
+<ion-content padding="0" center text-left>
+
+  <ion-label>
+    <h4>Udáslost</h4>
+  </ion-label>
+  <p> Po předešlé noci se probouzíš před sochou Winstona Churchilla s urputnou bolestí hlavy a dočasným výpadkem paměti. Po několika
+    minutách potřebných na zorientování si vybavuješ, že jsi se zúčastnil akce Nation2Nation, kam jsi vzal i svého nového
+    buddyho - zahraničního studenta, který ti byl přidělen v rámci výměnného programu Erasmus+. Avšak ať se snažíš sebevíc,
+    nedokážeš si vybavit kolikátého vlastně je, kdo je tvým kamarádem, ani co jste celou noc prováděli. Tvým úkolem tedy
+    je zjistit jeho identitu a odkrýt události minulé noci. K prvnímu poodhalení ti poslouží samotný Sir Winston Ch., opírající
+    se monumemtálně o svou holi. Především něco na jeho kabátu zaujalo tvou pozornost. Je možné, že zde najdeš souvislost
+    s konáním akce?
+  </p>
+  <ion-label>
+    <h4>Úkol</h4>
+  </ion-label>
   <p> Zkus popřemýšlet, jak by mohl být kabát sochy Winstona Churchulla spojen s datem, kdy se akce konala.
 
+  </p>
+  <div *ngIf="hintLevel1()">
+    <h3>Nápověda 1</h3>
+    <p>
+      <ion-icon name="alert"></ion-icon>Měsíc je čtyřnásobek dne.
     </p>
+  </div>
 
-    <p> <ion-icon name="alert"></ion-icon>Hint: Měsíc je čtyřnásobek dne.
-    </p>
-
-
-  
 
   <ion-list>
-      <ion-item>
-          <ion-label>Datum party:</ion-label>
-          <ion-datetime displayFormat="DD. MMMM" pickerFormat="DD. MMMM" [(ngModel)]="this.event.timeEnds"></ion-datetime>
-        </ion-item>
+    <ion-item>
+      <ion-label>Datum party:</ion-label>
+      <ion-datetime displayFormat="DD. MMMM" pickerFormat="DD. MMMM" [(ngModel)]="this.event.timeEnds"></ion-datetime>
+    </ion-item>
 
-<ion-row>
-  <ion-col>
-  <button ion-button (click)="goToOtherPage()" >Odpovědět</button>
-</ion-col>
-<ion-col>
-    <button ion-button (click)="reallyHintAlert()" >Nápověda</button>
-  </ion-col>
-</ion-row>  
-  
-  
-  <timer #timer timeInSeconds="1"></timer>
-  <p font-size="2px"><ion-icon name="information"></ion-icon> Velmi dobře si pamatuj odpovědi na jednotlivé otázky. Budou se ti hodit na konci hry.</p>
-</ion-list> 
+    <ion-row>
+      <ion-col>
+        <button ion-button (click)="goToOtherPage()">Odpovědět</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+      </ion-col>
+    </ion-row>
+
+
+    <timer #timer timeInSeconds="1"></timer>
+    <p font-size="2px">
+      <ion-icon name="information"></ion-icon> Velmi dobře si pamatuj odpovědi na jednotlivé otázky. Budou se ti hodit na konci hry.</p>
+  </ion-list>
 </ion-content>

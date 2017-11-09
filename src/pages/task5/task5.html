@@ -1,4 +1,5 @@
 
+
 <ion-header>
     <ion-navbar>
       <ion-title>
@@ -18,21 +19,20 @@
     </ion-navbar>
   </ion-header>
   <ion-content padding>
-    Welcome to ESCAPE GAME!
+    <h1>Gratulujeme!</h1>
+    <p> 
+      Vyhrál jsi a našel jsi náramek tvého kamaráda, který ti pomůže rozřešit celou záhadu. 
+    </p> 
+
     <p>
-      TAAAASK2, input answer to this challenge
+      
+
+      Bai! 
+
     </p>
-  
-    <ion-list>
-        
-          <ion-item>
-            <ion-label floating>Answer3</ion-label>
-            <ion-input type="text" [(ngModel)]="answer"></ion-input>
-          </ion-item>
-        
-          
-        
-        </ion-list>
-      <button ion-button (click)="goToOtherPage()" color="light">Odpovědět</button>
+    <div class="img-responsive" alignt="centre">
+        <img width="250"height="250"  src="/images/lion.jpeg" />
+  </div>
+      <button ion-button (click)="goToOtherPage()" color="light">Pokračovat</button>
       <timer #timer timeInSeconds={{resumeTime}}></timer>
   </ion-content>

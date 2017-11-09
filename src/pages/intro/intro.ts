@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { HomePage } from "../home/home";
+import { TabProfilePage } from "../tab-profile/tab-profile";
  
 @IonicPage()
 @Component({
@@ -17,4 +18,8 @@ export class IntroPage {
     this.navCtrl.setRoot(HomePage);
   }
  
+
+  goToHell(){
+    this.navCtrl.setRoot(TabProfilePage);
+  }
 }

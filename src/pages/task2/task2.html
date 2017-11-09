@@ -1,44 +1,52 @@
-
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      VŠE Escape Game
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-        VŠE Escape Game
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-header>
-    <ion-navbar>
-      
-      <button ion-button menuToggle>
+  <ion-navbar>
+
+    <button ion-button menuToggle>
         <ion-icon name="menu">
         </ion-icon>
       </button>
-      <ion-title>Escape Game</ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content padding>
-      <h4>Událost</h4>
-    <p>
-        Kromě tebe pomáhala tvému novému kamarádovi se snazším přechodem na VŠE i jedna další duše z Oddělení Zahraničních Styků. 
-        Což tě přivádí k vzpomínkám na předchozí noc, kde jsi měl/a “geniální” nápad spojit dva alkoholické nápoje (v barvách typických pro jeho zemi) v jeden společný drink - tzv magické oko.
-        
-      
-    </p>
-    <h4>Úkol</h4>
-    <p>Zadej její křestní jméno, pomůže ti jmenovka na dveřích její kanceláře.</p>
-  
-    <ion-list>
-        
-          <ion-item>
-            <ion-label floating>Jméno</ion-label>
-            <ion-input type="text" [(ngModel)]="answer"></ion-input>
-          </ion-item>
-        
-          
-        
-        </ion-list>
-      <button ion-button (click)="goToOtherPage()" color="light">Odpovědět</button>
-      <timer #timer timeInSeconds={{resumeTime}}></timer>
-  </ion-content>
+    <ion-title>Escape Game</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h4>Událost</h4>
+  <p>
+    Kromě tebe pomáhala tvému novému kamarádovi se snazším přechodem na VŠE i jedna další duše z Oddělení Zahraničních Styků.
+    Což tě přivádí k vzpomínkám na předchozí noc, kde jsi měl/a “geniální” nápad spojit dva alkoholické nápoje (v barvách
+    typických pro jeho zemi) v jeden společný drink - tzv magické oko.
+
+
+  </p>
+  <h4>Úkol</h4>
+  <p>Zadej její křestní jméno, pomůže ti jmenovka na dveřích její kanceláře.</p>
+  <div *ngIf="hintLevel1()">
+      <h3>Nápověda 1</h3>
+      <p>
+        <ion-icon name="alert"></ion-icon>Hint: neco vymyslet
+      </p>
+    </div>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Jméno</ion-label>
+      <ion-input type="text" [(ngModel)]="answer"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+      <ion-col>
+        <button ion-button (click)="goToOtherPage()">Odpovědět</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+      </ion-col>
+    </ion-row>
+  <timer #timer timeInSeconds={{resumeTime}}></timer>
+</ion-content>

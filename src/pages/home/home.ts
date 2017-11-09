@@ -15,6 +15,8 @@ export class HomePage {
    answer2: Date;
    currentDate: Date;
    initialDate: Date;
+   hint1 : boolean;
+   hint2 : boolean;
    
    @ViewChild(TimerComponent) timer: TimerComponent;
    constructor(public alertCtrl: AlertController 
@@ -25,6 +27,11 @@ export class HomePage {
       month: '1990-02-19',
       timeStarts: '07:43',
       timeEnds: '2017-12-15'
+    }
+   
+    hintLevel1(){
+return this.hint1;
+
     }
 
   //constructor(public navCtrl: NavController, alertCtrl: AlertController){ }
@@ -43,13 +50,20 @@ getDiff(){
       return this.currentDate;
 }
   ngOnInit() {
-    
+    this.hint1=false;
+    this.hint2=false;
     setTimeout(() => {
       this.timer.startTimer();
     }, 1000);
   }
   
-  
+  prolongTime(time){
+    
+    this.timer.pauseTimer();
+    this.timer.timeInSeconds =this.timer.getSecondsRemaining()+time;
+    this.timer.initTimer();
+    this.timer.resumeTimer();
+  }
   
   presentAlert() {
     
@@ -64,12 +78,18 @@ reallyHintAlert(){
   const alert = this.alertCtrl.create({
     title: 'Nápověda',
     subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli',
-    buttons: ['Zobraz nápovědu','Zrušit' ]
-  });
+    buttons: ['Zrušit' ]});
+    alert.addButton({
+      text: 'Zobraz napovedu',
+      handler: data => {
+        this.hint1 = true;
+        this.prolongTime(180);
+      }
+    });
   alert.present();
 
 }
-  hintAlert
+  
 
   goToOtherPage() {
   
@@ -82,10 +102,7 @@ reallyHintAlert(){
             );
   } else {
     this.presentAlert();
-    this.timer.pauseTimer();
-    this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
-    this.timer.initTimer();
-    this.timer.resumeTimer();
+    this.prolongTime(60);
   
     
     

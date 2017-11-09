@@ -1,4 +1,4 @@
-import { WinPage } from "../winpage/winpage";
+import { Task5Page } from "../task5/task5";
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TimerComponent } from '../timer/timer';
@@ -10,6 +10,8 @@ import { ViewChild } from '@angular/core';
 export class Task4Page {
   answer: string;
   resumeTime: string;
+  hint1: boolean;
+  hint2: boolean;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -28,27 +30,55 @@ export class Task4Page {
     alert.present();
   }
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.timer.startTimer();
-    }, 1000)
-  }
+  prolongTime(time) {
+    
+        this.timer.pauseTimer();
+        this.timer.timeInSeconds = this.timer.getSecondsRemaining() + time;
+        this.timer.initTimer();
+        this.timer.resumeTimer();
+      }
+    
+    
+      reallyHintAlert() {
+        const alert = this.alertCtrl.create({
+          title: 'Nápověda',
+          subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli',
+          buttons: ['Zrušit']
+        });
+        alert.addButton({
+          text: 'Zobraz napovedu',
+          handler: data => {
+            this.hint1 = true;
+            this.prolongTime(180);
+          }
+        });
+        alert.present();
+    
+      }
+    
+      ngOnInit() {
+        this.hint1 = false;
+        this.hint2 = false;
+        setTimeout(() => {
+          this.timer.startTimer();
+        }, 1000)
+      }
+      hintLevel1() {
+        return this.hint1;
+    
+      }
+    
+    
   goToOtherPage() {
     console.log(this.answer);
     if ( this.answer!=undefined ) {
       if (this.answer.toUpperCase()=="SKLAD" ) {
-      this.navCtrl.push(WinPage,{
+      this.navCtrl.push(Task5Page,{
         secondsRemaining: this.timer.getSecondsRemaining()}
 );
     }else {
       this.presentAlert();
-      this.timer.pauseTimer();
-      this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
-      console.log(this.timer.getSecondsRemaining()+60) ;
-      this.timer.initTimer();
-      console.log(this.timer.getSecondsRemaining()+60) ;
-      this.timer.resumeTimer();
-      console.log(this.timer.getSecondsRemaining()+60) ;
+      this.prolongTime(60);
       
     };
     }

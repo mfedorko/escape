@@ -1,5 +1,3 @@
-
-
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -10,7 +8,7 @@
 
 <ion-header>
   <ion-navbar>
-    
+
     <button ion-button menuToggle>
       <ion-icon name="menu">
       </ion-icon>
@@ -21,24 +19,40 @@
 <ion-content padding>
   <h4>Událost</h4>
   <p>
-      Útržkovitě si vybavuješ dlouhý rozhovor o snech, který jste spolu vedli ještě před party. Při pozorování “hvězdné oblohy” v atriu rajské budovy jste došli až k tomu, že i jedna konkrétní osoba měla v minulosti svůj sen - sen o pokroku univerzity a jejímu přizpůsobení technologickému vývoji. Tato osoba svůj sen krátce před smrtí skutečně uskutečnila, a založila fakultu informatiky, přičemž  se zároveň stala jejím prvním děkanem.
-    
+    Útržkovitě si vybavuješ dlouhý rozhovor o snech, který jste spolu vedli ještě před party. Při pozorování “hvězdné oblohy”
+    v atriu rajské budovy jste došli až k tomu, že i jedna konkrétní osoba měla v minulosti svůj sen - sen o pokroku univerzity
+    a jejímu přizpůsobení technologickému vývoji. Tato osoba svůj sen krátce před smrtí skutečně uskutečnila, a založila
+    fakultu informatiky, přičemž se zároveň stala jejím prvním děkanem.
+
   </p>
   <h4>Úkol</h4>
   <p>Tvým úkolem je zjistit přibližný věk (věkové rozmezí) tvého kamaráda pomocí těchto indícií.
   </p>
-   <p> Hint: přibližný věk zjistíš počtem let od † osobnosti, která se zasloužila o založení FIS na VŠE (spodní hranice), a sečtením “hvězd” (horní hranice). Své  výpočty vztáhni ke konci roku 2017</p>
 
+  <div *ngIf="hintLevel1()">
+    <h3>Nápověda 1</h3>
+    <p>
+      <ion-icon name="alert"></ion-icon>Hint: přibližný věk zjistíš počtem let od † osobnosti, která se zasloužila o založení FIS na VŠE (spodní
+      hranice), a sečtením “hvězd” (horní hranice). Své výpočty vztáhni ke konci roku 2017
+    </p>
+  </div>
   <ion-list>
-      <ion-item>
-          <ion-label>Věk od:</ion-label>
-          <ion-datetime displayFormat="mm" pickerFormat="mm" [(ngModel)]="this.event.timeStarts"></ion-datetime>
-        </ion-item>
-        <ion-item>
-            <ion-label>Věk do:</ion-label>
-            <ion-datetime displayFormat="mm" pickerFormat="mm" [(ngModel)]="this.event.timeEnds"></ion-datetime>
-          </ion-item>      
-      </ion-list>
-    <button ion-button (click)="goToOtherPage()" color="light">Odpovědět</button>
-    <timer #timer timeInSeconds={{resumeTime}}></timer>
+    <ion-item>
+      <ion-label>Věk od:</ion-label>
+      <ion-datetime displayFormat="mm" pickerFormat="mm" [(ngModel)]="this.event.timeStarts"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Věk do:</ion-label>
+      <ion-datetime displayFormat="mm" pickerFormat="mm" [(ngModel)]="this.event.timeEnds"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <button ion-button (click)="goToOtherPage()">Odpovědět</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+    </ion-col>
+  </ion-row>
+  <timer #timer timeInSeconds={{resumeTime}}></timer>
 </ion-content>

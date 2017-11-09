@@ -1,41 +1,97 @@
-import { WinPage } from "../winpage/winpage";
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { TabProfilePage } from "../tab-profile/tab-profile";
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
+
+
 @Component({
-  selector: 'page-task2',
-  templateUrl: 'task2.html'
+  selector: 'page-task6',
+  templateUrl: 'task6.html'
 })
-export class Task2Page {
-  answer: string;
+export class Task6Page {
+  answer1: string;
+  answer2: string;
   resumeTime: string;
+  hint1: boolean;
+  hint2: boolean;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
-              public navParams: NavParams)
-   {
-    
-  this.resumeTime = this.navParams.get('secondsRemaining');
-console.log(this.resumeTime); 
+    public navParams: NavParams,
+    public alertCtrl: AlertController) {
+    this.resumeTime = this.navParams.get('secondsRemaining');
+  }
+  presentAlert() {
 
+    const alert = this.alertCtrl.create({
+      title: 'Špatná odpověď',
+      subTitle: 'Odpověděl jsi špatně',
+      buttons: ['Zkusím znova']
+    });
+    alert.present();
+  }
+  public event = {
+    month: '1990-02-19',
+    timeStarts: '07:15',
+    timeEnds: '07:15'
+  }
+
+  prolongTime(time) {
+
+    this.timer.pauseTimer();
+    this.timer.timeInSeconds = this.timer.getSecondsRemaining() + time;
+    this.timer.initTimer();
+    this.timer.resumeTimer();
+  }
+
+
+  reallyHintAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Nápověda',
+      subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli',
+      buttons: ['Zrušit']
+    });
+    alert.addButton({
+      text: 'Zobraz napovedu',
+      handler: data => {
+        this.hint1 = true;
+        this.prolongTime(180);
+      }
+    });
+    alert.present();
 
   }
+
   ngOnInit() {
+    this.hint1 = false;
+    this.hint2 = false;
     setTimeout(() => {
-      this.timer.resumeTimer();
+      this.timer.startTimer();
     }, 1000)
   }
+  hintLevel1(){
+    return this.hint1;
+    
+        }
+    
   goToOtherPage() {
-    if ( this.answer!=undefined ) {
-      if (this.answer.toUpperCase()=="ANSWER3" ) {
-      this.navCtrl.push(WinPage,{
-        secondsRemaining: this.timer.getSecondsRemaining()}
-    
-    
-    
-              );
-    };
+    console.log(this.event.timeStarts);
+    console.log(this.event.timeEnds);
+
+    if (this.event.timeStarts != undefined && this.event.timeEnds != undefined) {
+
+      if (this.event.timeStarts == '07:08') {
+        this.navCtrl.push(TabProfilePage, {
+          secondsRemaining: this.timer.getSecondsRemaining()
+        });
+      } else {
+        this.presentAlert();
+        this.prolongTime(60);
+
+      };
     }
-    }
+  }
+
 }
+
 

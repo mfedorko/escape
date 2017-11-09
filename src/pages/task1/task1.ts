@@ -13,15 +13,16 @@ export class task1 {
   answer1: string;
   answer2: string;
   resumeTime: string;
+  hint1: boolean;
+  hint2: boolean;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public alertCtrl: AlertController)
-   {
-  this.resumeTime = this.navParams.get('secondsRemaining');
+    public navParams: NavParams,
+    public alertCtrl: AlertController) {
+    this.resumeTime = this.navParams.get('secondsRemaining');
   }
   presentAlert() {
-    
+
     const alert = this.alertCtrl.create({
       title: 'Špatná odpověď',
       subTitle: 'Odpověděl jsi špatně',
@@ -34,31 +35,63 @@ export class task1 {
     timeStarts: '07:15',
     timeEnds: '07:15'
   }
+
+  prolongTime(time) {
+
+    this.timer.pauseTimer();
+    this.timer.timeInSeconds = this.timer.getSecondsRemaining() + time;
+    this.timer.initTimer();
+    this.timer.resumeTimer();
+  }
+
+
+  reallyHintAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Nápověda',
+      subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli',
+      buttons: ['Zrušit']
+    });
+    alert.addButton({
+      text: 'Zobraz napovedu',
+      handler: data => {
+        this.hint1 = true;
+        this.prolongTime(180);
+      }
+    });
+    alert.present();
+
+  }
+
   ngOnInit() {
+    this.hint1 = false;
+    this.hint2 = false;
     setTimeout(() => {
       this.timer.startTimer();
     }, 1000)
   }
+  hintLevel1(){
+    return this.hint1;
+    
+        }
+    
   goToOtherPage() {
-    console.log( this.event.timeStarts );
-    console.log( this.event.timeEnds );
+    console.log(this.event.timeStarts);
+    console.log(this.event.timeEnds);
 
-    if ( this.event.timeStarts!=undefined && this.event.timeEnds!=undefined ) {
-      
-      if (this.event.timeStarts=='07:23' && this.event.timeEnds=='07:28'  ) {
-      this.navCtrl.push(Task2Page,{
-        secondsRemaining: this.timer.getSecondsRemaining()}   );
-    }else {
-      this.presentAlert();
-      this.timer.pauseTimer();
-      this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
-      this.timer.initTimer();
-      this.timer.resumeTimer();
-      
-    };
-    }
-    }
+    if (this.event.timeStarts != undefined && this.event.timeEnds != undefined) {
 
+      if (this.event.timeStarts == '07:23' && this.event.timeEnds == '07:28') {
+        this.navCtrl.push(Task2Page, {
+          secondsRemaining: this.timer.getSecondsRemaining()
+        });
+      } else {
+        this.presentAlert();
+        this.prolongTime(60);
+
+      };
+    }
   }
+
+}
 
 

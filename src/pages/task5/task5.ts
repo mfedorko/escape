@@ -1,4 +1,4 @@
-import { WinPage } from "../winpage/winpage";
+import { Task6Page } from "../task6/task6";
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TimerComponent } from '../timer/timer';
@@ -12,13 +12,12 @@ export class Task5Page {
   resumeTime: string;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public alertCtrl: AlertController)
-   {  
-  this.resumeTime = this.navParams.get('secondsRemaining');
+    public navParams: NavParams,
+    public alertCtrl: AlertController) {
+    this.resumeTime = this.navParams.get('secondsRemaining');
   }
   presentAlert() {
-    
+
     const alert = this.alertCtrl.create({
       title: 'Špatná odpověď',
       subTitle: 'Odpověděl jsi špatně',
@@ -28,24 +27,16 @@ export class Task5Page {
   }
   ngOnInit() {
     setTimeout(() => {
-      this.timer.resumeTimer();
+      this.timer.startTimer();
     }, 1000)
   }
   goToOtherPage() {
-    if ( this.answer!=undefined ) {
-      if (this.answer.toUpperCase()=="ANSWER3" ) {
-      this.navCtrl.push(WinPage,{
-        secondsRemaining: this.timer.getSecondsRemaining()} );
-    }else {
-      this.presentAlert();
-      this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
-      console.log(this.timer.getSecondsRemaining()+60) ;
-      this.timer.initTimer();
-      console.log(this.timer.getSecondsRemaining()+60) ;
-      this.timer.resumeTimer();   
-      console.log(this.timer.getSecondsRemaining()+60) ;
-    };
-    }
-    }
-}
+
+    this.navCtrl.push(Task6Page, {
+      secondsRemaining: this.timer.getSecondsRemaining()
+    });
+  }
+};
+
+
 
