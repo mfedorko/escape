@@ -34,7 +34,12 @@
     odpověď ti přidá další střípek do mozaiky. Ps. Protřepat,nemíchat! Hint: Místnost se nachází v nejnovější budově VŠE
     a má označení podle milovníka Martini.</p>
   <ion-list>
-
+    <div *ngIf="hintLevel1()">
+      <h3>Nápověda 1</h3>
+      <p>
+        <ion-icon name="alert"></ion-icon>Hint: neco vymyslet
+      </p>
+    </div>
     <ion-item>
       <ion-label floating>Místnost</ion-label>
       <ion-input type="text" [(ngModel)]="answer"></ion-input>
@@ -43,7 +48,7 @@
 
 
 
-    <button ion-button (click)="goToOtherPage()" color="light">Odpovědět</button>
+
     <ion-row>
       <ion-col>
         <button ion-button (click)="goToOtherPage()">Odpovědět</button>
