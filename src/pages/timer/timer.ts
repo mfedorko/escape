@@ -10,18 +10,28 @@ export class TimerComponent {
  
     @Input() timeInSeconds: number;
     public timer: ITimer;
- 
+    public now: Date;
+    public tick: Date;
+    public dif : number;
     constructor() {
     }
  
     ngOnInit() {
         this.initTimer();
+        
+        
     }
  
     hasFinished() {
         return this.timer.hasFinished;
     }
- 
+    prolongTime(time){
+        this.dif = this.now.getTime()-(time*1000) ;
+    
+        this.pauseTimer();
+        this.now.setTime(this.dif);
+        this.resumeTimer();
+      }
     initTimer() {
         if(!this.timeInSeconds) { this.timeInSeconds = 0; }
  
@@ -31,6 +41,7 @@ export class TimerComponent {
             hasStarted: false,
             hasFinished: false,
             secondsRemaining: this.timeInSeconds
+           
         };
  
         this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
@@ -39,9 +50,12 @@ export class TimerComponent {
     startTimer() {
         
         this.timer.runTimer = true;
+        this.now= new Date();
+        this.now.setTime(new Date().getTime() - (this.timer.secondsRemaining*1000));
         if (! this.timer.hasStarted)
         this.timerTick();
         this.timer.hasStarted = true;
+        
     }
  
     pauseTimer() {
@@ -55,8 +69,11 @@ export class TimerComponent {
  
     timerTick() {
         setTimeout(() => {
+            this.tick = new Date();
+            console.log("init time in mil: ", this.now.getTime() ,"now in mil:", this.tick);
             if (!this.timer.runTimer) { return; }
-            this.timer.secondsRemaining++;
+            this.timer.secondsRemaining=(this.tick.getTime() - this.now.getTime())/1000;
+          //  this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
             this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
             if (this.timer.secondsRemaining > 0) {
                 this.timerTick();

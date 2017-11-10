@@ -30,13 +30,7 @@ export class Task4Page {
     alert.present();
   }
 
-  prolongTime(time) {
-    
-        this.timer.pauseTimer();
-        this.timer.timeInSeconds = this.timer.getSecondsRemaining() + time;
-        this.timer.initTimer();
-        this.timer.resumeTimer();
-      }
+
     
     
       reallyHintAlert() {
@@ -46,10 +40,10 @@ export class Task4Page {
           buttons: ['Zrušit']
         });
         alert.addButton({
-          text: 'Zobraz napovedu',
+          text: 'Zobraz nápovědu',
           handler: data => {
             this.hint1 = true;
-            this.prolongTime(180);
+            this.timer.prolongTime(180);
           }
         });
         alert.present();
@@ -78,7 +72,7 @@ export class Task4Page {
 );
     }else {
       this.presentAlert();
-      this.prolongTime(60);
+      this.timer.prolongTime(60);
       
     };
     }

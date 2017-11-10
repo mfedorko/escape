@@ -22,13 +22,6 @@ export class Task3Page {
     public nativeAudio: NativeAudio) {
     this.resumeTime = this.navParams.get('secondsRemaining');
   }
-  prolongTime(time) {
-
-    this.timer.pauseTimer();
-    this.timer.timeInSeconds = this.timer.getSecondsRemaining() + time;
-    this.timer.initTimer();
-    this.timer.resumeTimer();
-  }
 
 
   reallyHintAlert() {
@@ -38,10 +31,10 @@ export class Task3Page {
       buttons: ['Zrušit']
     });
     alert.addButton({
-      text: 'Zobraz napovedu',
+      text: 'Zobraz nápovědu',
       handler: data => {
         this.hint1 = true;
-        this.prolongTime(180);
+        this.timer.prolongTime(180);
       }
     });
     alert.present();
@@ -77,7 +70,7 @@ export class Task3Page {
 
   playMusic() {
     this.nativeAudio.play('song1');
-    console.log("song playeed");
+
 
   }
   pauseMusic() {
@@ -146,7 +139,7 @@ export class Task3Page {
         });
       } else {
         this.presentAlert();
-        this.prolongTime(60);
+        this.timer.prolongTime(60);
 
       }
     }

@@ -17,6 +17,7 @@ export class HomePage {
    initialDate: Date;
    hint1 : boolean;
    hint2 : boolean;
+
    
    @ViewChild(TimerComponent) timer: TimerComponent;
    constructor(public alertCtrl: AlertController 
@@ -57,13 +58,7 @@ getDiff(){
     }, 1000);
   }
   
-  prolongTime(time){
-    
-    this.timer.pauseTimer();
-    this.timer.timeInSeconds =this.timer.getSecondsRemaining()+time;
-    this.timer.initTimer();
-    this.timer.resumeTimer();
-  }
+
   
   presentAlert() {
     
@@ -80,10 +75,10 @@ reallyHintAlert(){
     subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli',
     buttons: ['Zrušit' ]});
     alert.addButton({
-      text: 'Zobraz napovedu',
+      text: 'Zobraz nápovědu',
       handler: data => {
         this.hint1 = true;
-        this.prolongTime(180);
+        this.timer.prolongTime(180);
       }
     });
   alert.present();
@@ -94,15 +89,13 @@ reallyHintAlert(){
   goToOtherPage() {
   
   if ( this.event.timeEnds!=undefined ) {
-    console.log("from date picker: " + this.event.timeEnds);
-    console.log("from date picker: " + this.answer);
     if (this.event.timeEnds=="2017-08-02" ) {
     this.navCtrl.push(task1, {
       secondsRemaining: this.timer.getSecondsRemaining()}
             );
   } else {
     this.presentAlert();
-    this.prolongTime(60);
+    this.timer.prolongTime(60);
   
     
     

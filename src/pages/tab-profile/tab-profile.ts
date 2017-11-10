@@ -58,13 +58,7 @@ export class TabProfilePage {
 );
     }else {
       this.presentAlert();
-      this.timer.pauseTimer();
-      this.timer.timeInSeconds =this.timer.getSecondsRemaining()+60;
-      console.log(this.timer.getSecondsRemaining()+60) ;
-      this.timer.initTimer();
-      console.log(this.timer.getSecondsRemaining()+60) ;
-      this.timer.resumeTimer();
-      console.log(this.timer.getSecondsRemaining()+60) ;
+      this.timer.prolongTime(60);
       
     };
     }

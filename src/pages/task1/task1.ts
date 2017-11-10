@@ -36,13 +36,7 @@ export class task1 {
     timeEnds: '07:15'
   }
 
-  prolongTime(time) {
 
-    this.timer.pauseTimer();
-    this.timer.timeInSeconds = this.timer.getSecondsRemaining() + time;
-    this.timer.initTimer();
-    this.timer.resumeTimer();
-  }
 
 
   reallyHintAlert() {
@@ -52,10 +46,10 @@ export class task1 {
       buttons: ['Zrušit']
     });
     alert.addButton({
-      text: 'Zobraz napovedu',
+      text: 'Zobraz nápovědu',
       handler: data => {
         this.hint1 = true;
-        this.prolongTime(180);
+        this.timer.prolongTime(180);
       }
     });
     alert.present();
@@ -75,8 +69,6 @@ export class task1 {
         }
     
   goToOtherPage() {
-    console.log(this.event.timeStarts);
-    console.log(this.event.timeEnds);
 
     if (this.event.timeStarts != undefined && this.event.timeEnds != undefined) {
 
@@ -86,7 +78,7 @@ export class task1 {
         });
       } else {
         this.presentAlert();
-        this.prolongTime(60);
+        this.timer.prolongTime(60);
 
       };
     }
