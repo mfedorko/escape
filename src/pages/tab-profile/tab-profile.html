@@ -8,7 +8,7 @@
     <ion-row>
       <ion-col>
         <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
+          <img [src]="user1.photoURL || 'assets/img/noavatar.png'">
         </div>
         <button ion-button (click)="goToOtherPage(1)" block clear color="royal">Tohle je můj buddy</button>
       </ion-col>
@@ -19,455 +19,299 @@
       <ion-col no-padding>
         <ion-item>
           <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
+          <p>{{user1.age}}</p>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-item icon-left>
       <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
+        <ion-icon name="nationality"></ion-icon>Národnost</h4>
+      <p>{{user1.nationality}}</p>
     </ion-item>
     <ion-item icon-left>
       <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
+        <ion-icon name="zodiacsign"></ion-icon>Znamení</h4>
+      <p>{{user1.zodiacsign}}</p>
     </ion-item>
     <ion-item icon-left>
       <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
+        <ion-icon name="drink"></ion-icon>Oblíbený drink</h4>
+      <p>{{user1.drink}}</p>
     </ion-item>
     <ion-item icon-left>
       <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
+        <ion-icon name="faculty"></ion-icon>Fakulta</h4>
+      <p>{{user1.faculty}}</p>
     </ion-item>
     <ion-item icon-left>
       <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
+        <ion-icon name="hobbies"></ion-icon>Záliby</h4>
+      <p>{{user1.hobbies}}</p>
     </ion-item>
     <ion-item icon-left>
       <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
+        <ion-icon name="sibblings"></ion-icon>Počet sourozenců</h4>
+      <p>{{user1.sibblings}}</p>
     </ion-item>
   </ion-list>
+ 
   <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(2)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
+      <ion-row>
+        <ion-col>
+          <div class="profile-photo">
+            <img [src]="user2.photoURL || 'assets/img/noavatar.png'">
+          </div>
+          <button ion-button (click)="goToOtherPage(1)" block clear color="royal">Tohle je můj buddy</button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-list class="profile-detail">
+      <ion-row>
+        <ion-col no-padding>
+          <ion-item>
+            <h4>Věk</h4>
+            <p>{{user2.age}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item icon-left>
+        <h4>
+          <ion-icon name="nationality"></ion-icon>Národnost</h4>
+        <p>{{user2.nationality}}</p>
+      </ion-item>
+      <ion-item icon-left>
+        <h4>
+          <ion-icon name="zodiacsign"></ion-icon>Znamení</h4>
+        <p>{{user2.zodiacsign}}</p>
+      </ion-item>
+      <ion-item icon-left>
+        <h4>
+          <ion-icon name="drink"></ion-icon>Oblíbený drink</h4>
+        <p>{{user2.drink}}</p>
+      </ion-item>
+      <ion-item icon-left>
+        <h4>
+          <ion-icon name="faculty"></ion-icon>Fakulta</h4>
+        <p>{{user2.faculty}}</p>
+      </ion-item>
+      <ion-item icon-left>
+        <h4>
+          <ion-icon name="hobbies"></ion-icon>Záliby</h4>
+        <p>{{user2.hobbies}}</p>
+      </ion-item>
+      <ion-item icon-left>
+        <h4>
+          <ion-icon name="sibblings"></ion-icon>Počet sourozenců</h4>
+        <p>{{user2.sibblings}}</p>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-card class="profile-top">
+        <ion-row>
+          <ion-col>
+            <div class="profile-photo">
+              <img [src]="user3.photoURL || 'assets/img/noavatar.png'">
+            </div>
+            <button ion-button (click)="goToOtherPage(1)" block clear color="royal">Tohle je můj buddy</button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <ion-list class="profile-detail">
+        <ion-row>
+          <ion-col no-padding>
+            <ion-item>
+              <h4>Věk</h4>
+              <p>{{user3.age}}</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-item icon-left>
+          <h4>
+            <ion-icon name="nationality"></ion-icon>Národnost</h4>
+          <p>{{user3.nationality}}</p>
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
-
-
-  <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(3)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
+        <ion-item icon-left>
+          <h4>
+            <ion-icon name="zodiacsign"></ion-icon>Znamení</h4>
+          <p>{{user3.zodiacsign}}</p>
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
-
-  <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(4)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
+        <ion-item icon-left>
+          <h4>
+            <ion-icon name="drink"></ion-icon>Oblíbený drink</h4>
+          <p>{{user3.drink}}</p>
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
-
-
-
-  <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(5)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
+        <ion-item icon-left>
+          <h4>
+            <ion-icon name="faculty"></ion-icon>Fakulta</h4>
+          <p>{{user3.faculty}}</p>
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
-
-
-
-  <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(6)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
+        <ion-item icon-left>
+          <h4>
+            <ion-icon name="hobbies"></ion-icon>Záliby</h4>
+          <p>{{user3.hobbies}}</p>
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
-
-
-  <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(7)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
+        <ion-item icon-left>
+          <h4>
+            <ion-icon name="sibblings"></ion-icon>Počet sourozenců</h4>
+          <p>{{user3.sibblings}}</p>
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
+      </ion-list>
 
 
+      <ion-card class="profile-top">
+          <ion-row>
+            <ion-col>
+              <div class="profile-photo">
+                <img [src]="user4.photoURL || 'assets/img/noavatar.png'">
+              </div>
+              <button ion-button (click)="goToOtherPage(1)" block clear color="royal">Tohle je můj buddy</button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-list class="profile-detail">
+          <ion-row>
+            <ion-col no-padding>
+              <ion-item>
+                <h4>Věk</h4>
+                <p>{{user4.age}}</p>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-item icon-left>
+            <h4>
+              <ion-icon name="nationality"></ion-icon>Národnost</h4>
+            <p>{{user4.nationality}}</p>
+          </ion-item>
+          <ion-item icon-left>
+            <h4>
+              <ion-icon name="zodiacsign"></ion-icon>Znamení</h4>
+            <p>{{user4.zodiacsign}}</p>
+          </ion-item>
+          <ion-item icon-left>
+            <h4>
+              <ion-icon name="drink"></ion-icon>Oblíbený drink</h4>
+            <p>{{user4.drink}}</p>
+          </ion-item>
+          <ion-item icon-left>
+            <h4>
+              <ion-icon name="faculty"></ion-icon>Fakulta</h4>
+            <p>{{user4.faculty}}</p>
+          </ion-item>
+          <ion-item icon-left>
+            <h4>
+              <ion-icon name="hobbies"></ion-icon>Záliby</h4>
+            <p>{{user4.hobbies}}</p>
+          </ion-item>
+          <ion-item icon-left>
+            <h4>
+              <ion-icon name="sibblings"></ion-icon>Počet sourozenců</h4>
+            <p>{{user4.sibblings}}</p>
+          </ion-item>
+        </ion-list>
 
-  <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(8)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
-  <ion-card class="profile-top">
-    <ion-row>
-      <ion-col>
-        <div class="profile-photo">
-          <img [src]="user.photoURL || 'assets/img/noavatar.png'">
-        </div>
-        <button ion-button (click)="goToOtherPage(9)" block clear color="royal">Tohle je můj buddy</button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-  <ion-list class="profile-detail">
-    <ion-row>
-      <ion-col no-padding>
-        <ion-item>
-          <h4>Věk</h4>
-          <p>{{user.displayName}}</p>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Národnost</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Znamení</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Oblíbený drink</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Fakulta</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Záliby</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-    <ion-item icon-left>
-      <h4>
-        <ion-icon name="mail"></ion-icon>Počet sourozenců</h4>
-      <p>{{user.email}}</p>
-    </ion-item>
-  </ion-list>
+        <ion-card class="profile-top">
+            <ion-row>
+              <ion-col>
+                <div class="profile-photo">
+                  <img [src]="user5.photoURL || 'assets/img/noavatar.png'">
+                </div>
+                <button ion-button (click)="goToOtherPage(1)" block clear color="royal">Tohle je můj buddy</button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+          <ion-list class="profile-detail">
+            <ion-row>
+              <ion-col no-padding>
+                <ion-item>
+                  <h4>Věk</h4>
+                  <p>{{user5.age}}</p>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-item icon-left>
+              <h4>
+                <ion-icon name="nationality"></ion-icon>Národnost</h4>
+              <p>{{user5.nationality}}</p>
+            </ion-item>
+            <ion-item icon-left>
+              <h4>
+                <ion-icon name="zodiacsign"></ion-icon>Znamení</h4>
+              <p>{{user5.zodiacsign}}</p>
+            </ion-item>
+            <ion-item icon-left>
+              <h4>
+                <ion-icon name="drink"></ion-icon>Oblíbený drink</h4>
+              <p>{{user5.drink}}</p>
+            </ion-item>
+            <ion-item icon-left>
+              <h4>
+                <ion-icon name="faculty"></ion-icon>Fakulta</h4>
+              <p>{{user5.faculty}}</p>
+            </ion-item>
+            <ion-item icon-left>
+              <h4>
+                <ion-icon name="hobbies"></ion-icon>Záliby</h4>
+              <p>{{user5.hobbies}}</p>
+            </ion-item>
+            <ion-item icon-left>
+              <h4>
+                <ion-icon name="sibblings"></ion-icon>Počet sourozenců</h4>
+              <p>{{user5.sibblings}}</p>
+            </ion-item>
+          </ion-list>
+
+          <ion-card class="profile-top">
+              <ion-row>
+                <ion-col>
+                  <div class="profile-photo">
+                    <img [src]="user6.photoURL || 'assets/img/noavatar.png'">
+                  </div>
+                  <button ion-button (click)="goToOtherPage(1)" block clear color="royal">Tohle je můj buddy</button>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+            <ion-list class="profile-detail">
+              <ion-row>
+                <ion-col no-padding>
+                  <ion-item>
+                    <h4>Věk</h4>
+                    <p>{{user6.age}}</p>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-item icon-left>
+                <h4>
+                  <ion-icon name="nationality"></ion-icon>Národnost</h4>
+                <p>{{user6.nationality}}</p>
+              </ion-item>
+              <ion-item icon-left>
+                <h4>
+                  <ion-icon name="zodiacsign"></ion-icon>Znamení</h4>
+                <p>{{user6.zodiacsign}}</p>
+              </ion-item>
+              <ion-item icon-left>
+                <h4>
+                  <ion-icon name="drink"></ion-icon>Oblíbený drink</h4>
+                <p>{{user6.drink}}</p>
+              </ion-item>
+              <ion-item icon-left>
+                <h4>
+                  <ion-icon name="faculty"></ion-icon>Fakulta</h4>
+                <p>{{user6.faculty}}</p>
+              </ion-item>
+              <ion-item icon-left>
+                <h4>
+                  <ion-icon name="hobbies"></ion-icon>Záliby</h4>
+                <p>{{user6.hobbies}}</p>
+              </ion-item>
+              <ion-item icon-left>
+                <h4>
+                  <ion-icon name="sibblings"></ion-icon>Počet sourozenců</h4>
+                <p>{{user6.sibblings}}</p>
+              </ion-item>
+            </ion-list>
+
 
   <timer #timer timeInSeconds={{resumeTime}}></timer>
 

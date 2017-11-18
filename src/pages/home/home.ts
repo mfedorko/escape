@@ -27,7 +27,7 @@ export class HomePage {
     public event = {
       month: '1990-02-19',
       timeStarts: '07:43',
-      timeEnds: '2017-12-15'
+      timeEnds: '2017-01-01'
     }
    
     hintLevel1(){
@@ -72,7 +72,7 @@ getDiff(){
 reallyHintAlert(){
   const alert = this.alertCtrl.create({
     title: 'Nápověda',
-    subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli',
+    subTitle: 'Máš možnost získat nápovědu, nicméně k času se ti přičtou 3 minuty, dobře si to rozmysli.',
     buttons: ['Zrušit' ]});
     alert.addButton({
       text: 'Zobraz nápovědu',
