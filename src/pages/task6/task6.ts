@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import { TabProfilePage } from "../tab-profile/tab-profile";
+import { Task7Page } from "../task7/task7";
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
 
@@ -69,13 +69,12 @@ export class Task6Page {
         }
     
   goToOtherPage() {
-    console.log(this.event.timeStarts);
-    console.log(this.event.timeEnds);
+  
 
     if (this.event.timeStarts != undefined && this.event.timeEnds != undefined) {
 
       if (this.event.timeStarts == '07:08') {
-        this.navCtrl.push(TabProfilePage, {
+        this.navCtrl.push(Task7Page, {
           secondsRemaining: this.timer.getSecondsRemaining()
         });
       } else {
