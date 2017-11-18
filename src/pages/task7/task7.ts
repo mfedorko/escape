@@ -4,8 +4,8 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
 @Component({
-  selector: 'page-task4',
-  templateUrl: 'task4.html'
+  selector: 'page-task7',
+  templateUrl: 'task7.html'
 })
 export class Task7Page {
   answer: string;
