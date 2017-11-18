@@ -13,6 +13,11 @@ import { Task3Page } from "../pages/task3/task3";
 import { Task4Page } from "../pages/task4/task4";
 import { Task5Page } from "../pages/task5/task5";
 import { Task6Page } from "../pages/task6/task6";
+import { Task7Page } from "../pages/task7/task7";
+import { Task8Page } from "../pages/task8/task8";
+import { Task9Page } from "../pages/task9/task9";
+import { Task10Page } from "../pages/task10/task10";
+import { Task11Page } from "../pages/task11/task11";
 import { WinPage } from "../pages/winpage/winpage";
 import { TimerComponent } from '../pages/timer/timer';
 import { NativeAudio } from '@ionic-native/native-audio';
@@ -28,6 +33,11 @@ import { TabProfilePage } from "../pages/tab-profile/tab-profile";
     Task4Page,
     Task5Page,
     Task6Page,
+    Task7Page,
+    Task8Page,
+    Task9Page,
+    Task10Page,
+    Task11Page,
     WinPage,
     TimerComponent,
     TabProfilePage,

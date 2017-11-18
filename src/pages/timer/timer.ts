@@ -70,7 +70,6 @@ export class TimerComponent {
     timerTick() {
         setTimeout(() => {
             this.tick = new Date();
-            console.log("init time in mil: ", this.now.getTime() ,"now in mil:", this.tick);
             if (!this.timer.runTimer) { return; }
             this.timer.secondsRemaining=(this.tick.getTime() - this.now.getTime())/1000;
           //  this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);

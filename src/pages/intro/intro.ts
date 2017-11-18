@@ -19,7 +19,7 @@ export class IntroPage {
   }
  
 
-  goToHell(){
+  goToTab(){
     this.navCtrl.setRoot(TabProfilePage);
   }
 }

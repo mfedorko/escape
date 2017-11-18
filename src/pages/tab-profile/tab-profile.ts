@@ -46,6 +46,7 @@ export class TabProfilePage {
   ngOnInit() {
     setTimeout(() => {
       this.timer.startTimer();
+      console.log("Alive!");
     }, 1000)
   }
   goToOtherPage(id) {
