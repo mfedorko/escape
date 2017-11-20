@@ -26,6 +26,7 @@ export class TimerComponent {
         return this.timer.hasFinished;
     }
     prolongTime(time){
+        console.log("Im here");
         this.dif = this.now.getTime()-(time*1000) ;
     
         this.pauseTimer();

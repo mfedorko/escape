@@ -5,8 +5,14 @@
        ion-slide {
          background-color: #7DBFDD;
          height:100%;
+         font-size: 2em;
        }
-    
+   
+    html{
+      font-size:1rem;	
+    }
+
+
        ion-slide img {
          height: 100% important;
          width: 100% important;

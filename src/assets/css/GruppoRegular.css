@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'GruppoRegular';
-    src: url('fonts/GruppoRegular.eot');
-    src: url('fonts/GruppoRegular.eot') format('embedded-opentype'),
-         url('fonts/GruppoRegular.woff2') format('woff2'),
-         url('fonts/GruppoRegular.woff') format('woff'),
-         url('fonts/GruppoRegular.ttf') format('truetype'),
-         url('fonts/GruppoRegular.svg#GruppoRegular') format('svg');
-}

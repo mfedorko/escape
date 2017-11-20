@@ -78,7 +78,8 @@ export class HomePage {
     alert.addButton({
       text: 'Zobraz nápovědu',
       handler: data => {
-        if (this.hint1 = false) {
+        console.log(this.hint1);
+        if (!this.hint1) {
           this.timer.prolongTime(180);
         }
         this.hint1 = true;

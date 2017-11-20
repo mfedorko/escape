@@ -48,7 +48,7 @@ export class Task6Page {
     alert.addButton({
       text: 'Zobraz nápovědu',
       handler: data => {
-        if (this.hint1 = false) {
+        if (!this.hint1 ) {
           this.timer.prolongTime(180);
         }
         this.hint1 = true;
