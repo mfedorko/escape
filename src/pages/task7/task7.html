@@ -1,10 +1,4 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      VŠEFROVAČKA
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+
 
 <ion-header>
   <ion-navbar>
@@ -13,17 +7,18 @@
         <ion-icon name="menu">
         </ion-icon>
       </button>
-    <ion-title> Escape Game</ion-title>
+    <ion-title>   <img class="img" align="center"  src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <h4>Událost</h4>
   <p>
-    vloz text udalosti sem
+      Včera jsi to fakt přehnal/a - bolí tě hlava a míchal/a jsi všechno dohromady.
+      Byla tam speciální akce na zelenou, musel/a jsi však k tomu přikoupit vodku.      
 
   </p>
   <h4>Úkol</h4>
-  <p>vloz text ukolu sem</p>
+  <p>Pamatuješ si, že jsi za zelenou a vodku platil/a dohromady 110 Kč. Víš také, že vodka byla o 100 korun dražší. Kolik stála zelená?</p>
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
@@ -31,12 +26,11 @@
         <ion-icon name="alert"></ion-icon>Hint: vloz text napovedy
       </p>
     </div>
+ 
     <ion-item>
-      <ion-label floating>Odpověď</ion-label>
-      <ion-input type="text" [(ngModel)]="answer"></ion-input>
-    </ion-item>
-
-
+        <ion-label>Cena:</ion-label>
+        <ion-datetime displayFormat="mm" pickerFormat="mm" [(ngModel)]="this.event.timeStarts"></ion-datetime>
+      </ion-item>
 
 
 

@@ -1,33 +1,30 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      VŠEFROVAČKA
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-header>
-  <ion-navbar>
 
     <button ion-button menuToggle>
         <ion-icon name="menu">
         </ion-icon>
       </button>
-    <ion-title> VŠEFROVAČKA</ion-title>
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <h4>Událost</h4>
   <p>
-VLOŽ TEXT UDÁLOSTI SEM
+    Když se cítiš sám a jsi bezradnej, vtedy zjistíš, kto by ti mohl být nápomocnej. Všichni skvělí odborníci na tebe čekají,
+    někteří žíví, jiní již odpočívají. Dokonce i v osudnou noc jste tam chtěli zajít, ale měli zavřeno - tak jste se šli
+    raději najíst. Kdybyste tam ale přece jenom zašli, odpoveď na buddíkovu otázku by jste našli. "Víš jaká je moje přezdívka?
+    Najdi 311MAR, to otevře ti k odpovědi dvířka. Autor tyhle knihy mě někdy i učil, jak zavést věci do praxe, to dovtedy
+    jsem netušil“
+
   </p>
   <h4>Úkol</h4>
-  <p>VLOŽ TEXT ÚKOLU SEM </p>
+  <p>Tvým úkolem je napsat celé jméno autora knihy, které vyplývá z básničky. </p>
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
       <p>
-        <ion-icon name="alert"></ion-icon>VLOŽ TEXT NÁPOVĚDY SEM
+        <ion-icon name="alert"></ion-icon>Hledej označení 311MAR v knihovně.
       </p>
     </div>
     <ion-item>
@@ -36,12 +33,9 @@ VLOŽ TEXT UDÁLOSTI SEM
     </ion-item>
 
 
-
-
-
     <ion-row>
       <ion-col>
-        <button ion-button (click)="goToOtherPage()">Odpovědět</button>
+        <button ion-button (click)="goToOtherPage()">Jméno autora</button>
       </ion-col>
       <ion-col>
         <button ion-button (click)="reallyHintAlert()">Nápověda</button>

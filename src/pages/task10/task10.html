@@ -1,29 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      VŠEFROVAČKA
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-header>
-  <ion-navbar>
 
     <button ion-button menuToggle>
         <ion-icon name="menu">
         </ion-icon>
       </button>
-    <ion-title> VŠEFROVAČKA</ion-title>
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <h4>Událost</h4>
   <p>
- VLOŽ TEXT UDÁLOSTI SEM
+    Nebe je modre, růže jsou červené, moje oblíbená barva je ... Od momentu kdy jsi se vzbudil ti jde tato věta v hlavě. Irituje
+    ta, že ji nevíš dokončit. Víš, že ti ji říkal tvůj buddik a víš, že měl na sobě tričko stejné barvy.
 
   </p>
   <h4>Úkol</h4>
-  <p>VLOŽ TEXT ÚKOLU SEM</p>
+  <p>Pokud chceš mít klid, najdi tabuli ve škole a urč její barvu</p>
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
@@ -32,7 +25,7 @@
       </p>
     </div>
     <ion-item>
-      <ion-label floating>Odpověď</ion-label>
+      <ion-label floating>Barva</ion-label>
       <ion-input type="text" [(ngModel)]="answer"></ion-input>
     </ion-item>
 

@@ -48,8 +48,11 @@ export class Task6Page {
     alert.addButton({
       text: 'Zobraz nápovědu',
       handler: data => {
+        if (this.hint1 = false) {
+          this.timer.prolongTime(180);
+        }
         this.hint1 = true;
-        this.timer.prolongTime(180);
+
       }
     });
     alert.present();
@@ -63,13 +66,13 @@ export class Task6Page {
       this.timer.startTimer();
     }, 1000)
   }
-  hintLevel1(){
+  hintLevel1() {
     return this.hint1;
-    
-        }
-    
+
+  }
+
   goToOtherPage() {
-  
+
 
     if (this.event.timeStarts != undefined && this.event.timeEnds != undefined) {
 

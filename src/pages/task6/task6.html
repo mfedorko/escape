@@ -5,17 +5,16 @@
         <ion-icon name="menu">
         </ion-icon>
       </button>
-    <ion-title> VŠEFROVAČKA</ion-title>
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <h4>Událost</h4>
   <p>
-    Tvůj kamarád Ti povídal o své rodině, ale vše, na co si vzpomínáš, je jen hádanka, která Ti měla pomoci určit počet členů
-    jeho rodiny. Jediný syn jeho babičky, která si kdysi vzala pradědečka budoucích dětí Tvého kamaráda, má s babičkou dětí
-    Tvého bratra celkem tolik mužských potomků, jako je součet číslic na skříňce, kam jste si po příchodu do školy odložili
-    věci. Skříňka se nachází v suterénu nejstarší budovy v areálu, a její číslo je nejvyšší ze všech. Každý ze synů má jednu
-    sestru. Kolik má kamarádova rodina členů?
+    Jediný syn jeho babičky, která si kdysi vzala pradědečka budoucích dětí Tvého kamaráda, má s babičkou dětí bratra Tvého kamaráda
+    celkem tolik mužských potomků, jako je součet číslic na skříňce, kam jste si po příchodu do školy odložili věci. Skříňka
+    se nachází v suterénu nejstarší budovy v areálu, a její číslo je nejvyšší ze všech. Každý ze synů má jednu sestru. Kolik
+    má kamarádova rodina členů?
   </p>
   <h4>Úkol</h4>
   <p>Tvým úkolem je zjistit počet členů kamarádovi rovdiny.
@@ -24,7 +23,8 @@
   <div *ngIf="hintLevel1()">
     <h3>Nápověda 1</h3>
     <p>
-      <ion-icon name="alert"></ion-icon>Hint: Hledej skříňky v přízemí NB. Nejvyšší číslo skříňky je > 200
+      <ion-icon name="alert"></ion-icon>Nehledej složitosti, zajdi do SB do suterénu, najdi skřínku s nejvyšším číslem a sečti číslice v tomto čísle.
+      K číslu připočti sestru a rodiče.
     </p>
   </div>
   <ion-list>

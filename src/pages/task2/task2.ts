@@ -39,12 +39,14 @@ export class Task2Page {
     alert.addButton({
       text: 'Zobraz nápovědu',
       handler: data => {
+        if (this.hint1 = false) {
+          this.timer.prolongTime(180);
+        }
         this.hint1 = true;
-        this.timer.prolongTime(180);
+
       }
     });
     alert.present();
-
   }
 
   ngOnInit() {

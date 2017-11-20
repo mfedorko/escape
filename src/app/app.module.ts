@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { ErrorHandler, NgModule} from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,6 +22,9 @@ import { WinPage } from "../pages/winpage/winpage";
 import { TimerComponent } from '../pages/timer/timer';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { TabProfilePage } from "../pages/tab-profile/tab-profile";
+
+  
+
 @NgModule({
   declarations: [
     MyApp,
@@ -41,11 +44,15 @@ import { TabProfilePage } from "../pages/tab-profile/tab-profile";
     WinPage,
     TimerComponent,
     TabProfilePage,
+    
+    
   ],
   imports: [
+    
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    
 
   ],
   bootstrap: [IonicApp],
@@ -67,6 +74,7 @@ import { TabProfilePage } from "../pages/tab-profile/tab-profile";
     WinPage,
     TimerComponent,
     TabProfilePage,
+    
 
   ],
   providers: [

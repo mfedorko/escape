@@ -1,0 +1,21 @@
+{
+  "name": "escape",
+  "description": "vsefrovacka school project",
+  "main": "index.html",
+  "authors": [
+    "Michal Fedorko"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mfedorko/escape",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic-numberpicker": "^1.1.4"
+  }
+}

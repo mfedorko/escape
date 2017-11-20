@@ -1,6 +1,17 @@
 page-home {
-
    
-
-
+    .img {
+        height: 20% important;
+        width: 20% important;
+        position: auto;  
+        top: 0;  
+        bottom: 0;  
+        left: 0;  
+        right: 0;  
+        margin: auto;
+      }
+      .bar-header{
+        padding-top:0px ;
+        height: 20px 
+      }
 }

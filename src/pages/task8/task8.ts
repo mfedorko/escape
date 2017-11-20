@@ -42,8 +42,11 @@ export class Task8Page {
         alert.addButton({
           text: 'Zobraz nápovědu',
           handler: data => {
+            if (this.hint1 = false) {
+              this.timer.prolongTime(180);
+            }
             this.hint1 = true;
-            this.timer.prolongTime(180);
+    
           }
         });
         alert.present();
@@ -66,7 +69,7 @@ export class Task8Page {
   goToOtherPage() {
     console.log(this.answer);
     if ( this.answer!=undefined ) {
-      if (this.answer.toUpperCase()=="ODPOVĚĎ" ) {
+      if (this.answer="90" ) {
       this.navCtrl.push(Task9Page,{
         secondsRemaining: this.timer.getSecondsRemaining()}
 );

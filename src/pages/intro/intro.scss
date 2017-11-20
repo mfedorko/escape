@@ -1,20 +1,20 @@
-.ios, .md {
+
     
      page-intro {
     
        ion-slide {
          background-color: #7DBFDD;
-         height:auto;
+         height:100%;
        }
     
        ion-slide img {
-         height: 70vh !important;
-         width: auto !important;
+         height: 100% important;
+         width: 100% important;
          position: auto;  
          top: 0;  
          bottom: 0;  
-         left: 0;  
-         right: 0;  
+         left: 10;  
+         right: 10;  
          margin: auto;
        }
     
@@ -23,4 +23,4 @@
   
     
    
-   }
+   
