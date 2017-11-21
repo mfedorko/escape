@@ -31,13 +31,13 @@
   <ion-label>
     <h4>Úkol</h4>
   </ion-label>
-  <p> Zkus popřemýšlet, jak by mohl být kabát sochy Winstona Churchulla spojen s datem, kdy se akce konala.
+  <p> Zkus popřemýšlet, jak by mohl být kabát sochy Winstona Churchilla spojen s datem, kdy se akce konala.
 
   </p>
   <div *ngIf="hintLevel1()">
     <h3>Nápověda 1</h3>
     <p>
-      <ion-icon name="alert"></ion-icon>Měsíc je čtyřnásobek dne.
+      <ion-icon name="alert"></ion-icon> Zkus zkombinovat počet knoflíků na kabátu a počet děr na knoflíky na klopě kabátu.
     </p>
   </div>
 
@@ -45,7 +45,7 @@
  
   <ion-list>
     <ion-item>
-      <ion-label>Datum party:</ion-label>
+      <ion-label>Datum party</ion-label>
       <ion-datetime displayFormat="DD. MMMM" pickerFormat="DD. MMMM" [(ngModel)]="this.event.timeEnds"></ion-datetime>
     </ion-item>
 

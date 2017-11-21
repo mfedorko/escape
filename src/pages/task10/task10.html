@@ -11,12 +11,13 @@
 <ion-content padding>
   <h4>Událost</h4>
   <p>
-    Nebe je modre, růže jsou červené, moje oblíbená barva je ... Od momentu kdy jsi se vzbudil ti jde tato věta v hlavě. Irituje
-    ta, že ji nevíš dokončit. Víš, že ti ji říkal tvůj buddik a víš, že měl na sobě tričko stejné barvy.
+    Nebe je modré, růže jsou rudé, moje oblíbená barva je ... Od momentu kdy ses vzbudil se ti tato věta opakuje v hlavě. Irituje
+    tě, že ji nedokážeš dokončit. Víš, že ti ji říkal tvůj buddik a víš, že měl na sobě tričko stejné barvy.
 
   </p>
   <h4>Úkol</h4>
   <p>Pokud chceš mít klid, najdi tabuli ve škole a urč její barvu</p>
+  <img class="img" align="center"  src="assets/img/tabule.png" />
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
@@ -38,7 +39,7 @@
         <button ion-button (click)="goToOtherPage()">Odpovědět</button>
       </ion-col>
       <ion-col>
-        <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+      <!--   <button ion-button (click)="reallyHintAlert()">Nápověda</button> -->
       </ion-col>
     </ion-row>
   </ion-list>

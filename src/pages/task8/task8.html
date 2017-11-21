@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
 
@@ -6,25 +5,28 @@
         <ion-icon name="menu">
         </ion-icon>
       </button>
-    <ion-title>   <img class="img" align="center"  src="assets/img/logo-black-small.png" /></ion-title>
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <h4>Událost</h4>
   <p>
-      Matně si vzpomínáš na večeři onoho osudového večera. Co jen to bylo ... česnek .... sýr ... na chlebu ... opečeném chlebu? .... TOPINKY ! Vůbec jste s kamarádem neměli čas. Topinky byly jediné jídlo, které bylo dostání v zaměstnanecké menze za .... za jak dlouho vlastně? Za jakou nejkratší dobu kuchařka mohla opéct tři topinky, když se na pánvičku vejdou jen dvě najednou a jedna strana se peče 30 sekund? Výsledek uveď ve vteřinách. Pokud si s odpovědí nevíš rady, pomůžou ti poslední dva znaky označení oné osudové místnosti napsané pozpátku.
+    Matně si vzpomínáš na večeři onoho osudového večera. Co jen to bylo ... česnek ... sýr ... na chlebu ... opečeném chlebu?
+    ... TOPINKY ! Topinky byly to jediné jídlo, které jste spolu zvládli ukuchtit na jistém místě za .... za jak dlouho vlastně? Za jakou nejkratší dobu jste mohli opéct tři topinky, když se na pánvičku vejdou jen
+    dvě najednou a jedna strana se peče 30 sekund? Výsledek uveď ve vteřinách. Pokud si s odpovědí nevíš rady, pomůžou ti
+    poslední dva znaky označení oné osudové místnosti napsané pozpátku.
 
 
   </p>
   <h4>Úkol</h4>
-  <p>Za jakou nejkratší dobu opečete tři topinky, když se na pánvičku vejdou jen dvě najednou a jedna strana se peče 30 sekund? 
-      Souvisí s číslem místnosti, kde se nachází zaměstnanecká menza
+  <p>Za jakou nejkratší dobu opečete tři topinky, když se na pánvičku vejdou jen dvě najednou a jedna strana se peče 30 sekund?
+    Souvisí s číslem místnosti, kde se nachází místo, kde jste kuchtili
   </p>
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
       <p>
-        <ion-icon name="alert"></ion-icon> Mohou zvolit možnost, že půjdou k menze a odpověď bude poslední dva znaky označení místnosti pozpátku.        
+        Běž k menze, počet sekund je její číslo pozpátky.
       </p>
     </div>
     <ion-item>

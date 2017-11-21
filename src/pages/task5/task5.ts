@@ -25,6 +25,7 @@ export class Task5Page {
     });
     alert.present();
   }
+
   ngOnInit() {
     setTimeout(() => {
       this.timer.startTimer();

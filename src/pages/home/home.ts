@@ -94,7 +94,7 @@ export class HomePage {
   goToOtherPage() {
 
     if (this.event.timeEnds != undefined) {
-      if (this.event.timeEnds == "2017-08-02") {
+      if (this.event.timeEnds == "2017-02-08") {
         this.navCtrl.push(task1, {
           secondsRemaining: this.timer.getSecondsRemaining()
         }

@@ -69,7 +69,7 @@ export class Task8Page {
   goToOtherPage() {
     console.log(this.answer);
     if ( this.answer!=undefined ) {
-      if (this.answer="90" ) {
+      if (this.answer=='90' ) {
       this.navCtrl.push(Task9Page,{
         secondsRemaining: this.timer.getSecondsRemaining()}
 );

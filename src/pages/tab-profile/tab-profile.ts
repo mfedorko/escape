@@ -38,7 +38,7 @@ export class TabProfilePage {
    {
   this.user1={  photoURL    :'assets/img/user1.png',
                 age         : "22",
-                nationality : "danniash",
+                nationality : "dánská",
                 zodiacsign  : "beran",
                 drink       : "vodka",
                 faculty     : "FIS",

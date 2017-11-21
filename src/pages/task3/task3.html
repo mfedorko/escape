@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
 
@@ -6,40 +5,46 @@
         <ion-icon name="menu">
         </ion-icon>
       </button>
-    <ion-title>  <img class="img" align="center"  src="assets/img/logo-black-small.png" /></ion-title>
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-row>
+
     <h4>Událost</h4>
     <p>
       Spolu s přibývajícím množstvím alkoholu v krvi vám 2x tak rychleji nabývalo i sebevědomí. A tak nenechalo na sebe dlouho
       čekat, a dostáváš další z řady tvých skvělých nápadů - karaoke. V hlavě ti stále ještě zní jedna chytlavá melodie,
       avšak slova se vytratila. Nicméně 100% víš, že výběr této písničky má spojitost s kamarádovým oborem studia (resp.
       fakultou).
-      <ion-icon name="play"></ion-icon>
     </p>
+    <H4>Melodii písničky si můžeš pustit po stisku tlačítla PLAY</H4>
   </ion-row>
   <ion-row>
     <ion-col>
       <button ion-button icon-start round (click)="playMusic()">
-       <ion-icon name="play" ></ion-icon  >
         PLAY
    </button>
     </ion-col>
     <ion-col>
       <button ion-button icon-start round (click)="pauseMusic()">
-         <ion-icon name="pause" ></ion-icon  >
           PAUSE
      </button>
     </ion-col>
   </ion-row>
   <div *ngIf="hintLevel1()">
-      <h3>Nápověda 1</h3>
-      <p>
-        <ion-icon name="alert"></ion-icon>Hint: neco vymyslet
-      </p>
-    </div>
+    <h3>Nápověda 1</h3>
+    <p>
+      <ion-icon name="alert"></ion-icon>Text refrénu písničky:
+    </p>
+    <p>Statistika nuda je má však cenné údaje,
+    </p>
+    <p>neklesejme na mysli, ona nám to vyčíslí.
+    </p>
+    <p>Statistika nuda je má však cenné údaje,
+    </p>
+    <p>neklesejme na mysli, ona nám to vyčíslí.</p>
+  </div>
   <ion-list>
     <h4>Úkol</h4>
     <p>Zjisti číslo fakulty, kterou tvůj buddík navštěvuje</p>
