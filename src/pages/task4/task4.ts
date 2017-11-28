@@ -63,6 +63,24 @@ export class Task4Page {
 
   }
 
+  reallySkipAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Přeskočit úkol',
+      subTitle: 'Máš možnost přeskočit úkol, nicméně k času se ti přičte 15 minut, dobře si to rozmysli.',
+      buttons: ['Zrušit']
+    });
+    alert.addButton({
+      text: 'Přeskoč',
+      handler: data => {
+          this.navCtrl.push(Task5Page, {
+            secondsRemaining: this.timer.getSecondsRemaining()+900
+          });
+      }
+    });
+    alert.present();
+
+  }
+
 
   goToOtherPage() {
     console.log(this.answer);

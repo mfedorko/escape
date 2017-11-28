@@ -17,7 +17,7 @@
   </p>
   <h4>Úkol</h4>
   <p>Pokud chceš mít klid, najdi tabuli ve škole a urč její barvu</p>
-  <img class="img" align="center"  src="assets/img/tabule.png" />
+  <img class="img" align="center" src="assets/img/tabule.png" />
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
@@ -38,8 +38,11 @@
       <ion-col>
         <button ion-button (click)="goToOtherPage()">Odpovědět</button>
       </ion-col>
-      <ion-col>
-      <!--   <button ion-button (click)="reallyHintAlert()">Nápověda</button> -->
+      <ion-col *ngIf="hintLevel1() == false">
+        <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+      </ion-col>
+      <ion-col *ngIf="hintLevel1()">
+        <button ion-button (click)="reallySkipAlert()">Přeskočit úkol</button>
       </ion-col>
     </ion-row>
   </ion-list>

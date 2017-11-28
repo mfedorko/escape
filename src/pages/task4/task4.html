@@ -1,5 +1,3 @@
-
-
 <ion-header>
   <ion-navbar>
 
@@ -7,7 +5,7 @@
         <ion-icon name="menu">
         </ion-icon>
       </button>
-    <ion-title>   <img class="img" align="center"  src="assets/img/logo-black-small.png" /></ion-title>
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -31,24 +29,23 @@
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
       <p>
-        <ion-icon name="alert"></ion-icon>K hledané místnosti se nejlépe dostaneš výtahem v Rajské budově. Nebojte se jet do podzemí a otevírat dveře.
+        <ion-icon name="alert"></ion-icon>K hledané místnosti se nejlépe dostaneš výtahem v Rajské budově. Nebojte se jet do podzemí a otevírat
+        dveře.
       </p>
     </div>
     <ion-item>
       <ion-label floating>Místnost</ion-label>
       <ion-input type="text" [(ngModel)]="answer"></ion-input>
     </ion-item>
-
-
-
-
-
     <ion-row>
       <ion-col>
         <button ion-button (click)="goToOtherPage()">Odpovědět</button>
       </ion-col>
-      <ion-col>
+      <ion-col *ngIf="hintLevel1() == false">
         <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+      </ion-col>
+      <ion-col *ngIf="hintLevel1()">
+        <button ion-button (click)="reallySkipAlert()">Přeskočit úkol</button>
       </ion-col>
     </ion-row>
   </ion-list>

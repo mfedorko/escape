@@ -53,9 +53,12 @@
       <ion-col>
         <button ion-button (click)="goToOtherPage()">Odpovědět</button>
       </ion-col>
-      <ion-col>
+      <ion-col *ngIf="hintLevel1() == false">
         <button ion-button (click)="reallyHintAlert()">Nápověda</button>
       </ion-col>
+      <ion-col *ngIf="hintLevel1()">
+          <button ion-button (click)="reallySkipAlert()">Přeskočit úkol</button>
+        </ion-col>
     </ion-row>
 
 

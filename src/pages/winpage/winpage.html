@@ -1,38 +1,37 @@
+<ion-header>
+  <ion-navbar>
 
+  </ion-navbar>
+</ion-header>
 
 <ion-header>
-    <ion-navbar>
-        <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-header>
-    <ion-navbar>
-      
-      <button ion-button menuToggle>
+  <ion-navbar>
+
+    <button ion-button menuToggle>
         <ion-icon name="menu">
         </ion-icon>
       </button>
-      <ion-title> Escape Game</ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content padding>
-    <h1>Gratulujeme!</h1>
-    <p> 
-      Vyhrál/a jsi a zjistil jsi kdo je tvůj buddík
-    </p> 
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h1>Gratulujeme!</h1>
+  <p>
+    Vyhrál/a jsi a zjistil jsi kdo je tvůj buddík
+  </p>
 
-    <p>
-      P.S. Díky, že jste s námi hráli. Budeme se těšit na konci sprintu 3. 
-    </p>
-    <p>
-      Bai! 
+  <p>
+    P.S. Díky, že jste s námi hráli. Budeme se těšit na konci sprintu 3.
+  </p>
+  <p>
+    Bai!
 
-    </p>
-   
-    <p>
-        <font size="+2">
-      tvůj čas byl:</font></p>
-    <timer #timer timeInSeconds={{resumeTime}}></timer>
-    
-  </ion-content>
+  </p>
+
+  <p>
+    <font size="+2">
+      tvůj čas byl:</font>
+  </p>
+  <timer #timer timeInSeconds={{resumeTime}}></timer>
+
+</ion-content>

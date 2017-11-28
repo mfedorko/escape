@@ -12,9 +12,10 @@
   <h4>Událost</h4>
   <p>
     Matně si vzpomínáš na večeři onoho osudového večera. Co jen to bylo ... česnek ... sýr ... na chlebu ... opečeném chlebu?
-    ... TOPINKY ! Topinky byly to jediné jídlo, které jste spolu zvládli ukuchtit na jistém místě za .... za jak dlouho vlastně? Za jakou nejkratší dobu jste mohli opéct tři topinky, když se na pánvičku vejdou jen
-    dvě najednou a jedna strana se peče 30 sekund? Výsledek uveď ve vteřinách. Pokud si s odpovědí nevíš rady, pomůžou ti
-    poslední dva znaky označení oné osudové místnosti napsané pozpátku.
+    ... TOPINKY ! Topinky byly to jediné jídlo, které jste spolu zvládli ukuchtit na jistém místě za .... za jak dlouho vlastně?
+    Za jakou nejkratší dobu jste mohli opéct tři topinky, když se na pánvičku vejdou jen dvě najednou a jedna strana se peče
+    30 sekund? Výsledek uveď ve vteřinách. Pokud si s odpovědí nevíš rady, pomůžou ti poslední dva znaky označení oné osudové
+    místnosti napsané pozpátku.
 
 
   </p>
@@ -35,16 +36,15 @@
       <ion-input type="text" [(ngModel)]="answer"></ion-input>
     </ion-item>
 
-
-
-
-
     <ion-row>
       <ion-col>
         <button ion-button (click)="goToOtherPage()">Odpovědět</button>
       </ion-col>
-      <ion-col>
+      <ion-col *ngIf="hintLevel1() == false">
         <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+      </ion-col>
+      <ion-col *ngIf="hintLevel1()">
+        <button ion-button (click)="reallySkipAlert()">Přeskočit úkol</button>
       </ion-col>
     </ion-row>
   </ion-list>

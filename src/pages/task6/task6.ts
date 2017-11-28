@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import { Task8Page } from "../task8/task8";
+import { Task7Page } from "../task7/task7";
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
 
@@ -37,6 +37,23 @@ export class Task6Page {
   }
 
 
+  reallySkipAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Přeskočit úkol',
+      subTitle: 'Máš možnost přeskočit úkol, nicméně k času se ti přičte 15 minut, dobře si to rozmysli.',
+      buttons: ['Zrušit']
+    });
+    alert.addButton({
+      text: 'Přeskoč',
+      handler: data => {
+          this.navCtrl.push(Task7Page, {
+            secondsRemaining: this.timer.getSecondsRemaining()+900
+          });
+      }
+    });
+    alert.present();
+
+  }
 
 
   reallyHintAlert() {
@@ -77,7 +94,7 @@ export class Task6Page {
     if (this.event.timeStarts != undefined && this.event.timeEnds != undefined) {
 
       if (this.event.timeStarts == '07:08') {
-        this.navCtrl.push(Task8Page, {
+        this.navCtrl.push(Task7Page, {
           secondsRemaining: this.timer.getSecondsRemaining()
         });
       } else {

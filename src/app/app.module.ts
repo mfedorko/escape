@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule} from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,8 +22,10 @@ import { WinPage } from "../pages/winpage/winpage";
 import { TimerComponent } from '../pages/timer/timer';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { TabProfilePage } from "../pages/tab-profile/tab-profile";
+import { HttpModule } from '@angular/http';
+import { File } from '@ionic-native/file';
 
-  
+
 
 @NgModule({
   declarations: [
@@ -45,14 +47,16 @@ import { TabProfilePage } from "../pages/tab-profile/tab-profile";
     TimerComponent,
     TabProfilePage,
     
-    
+
+
   ],
   imports: [
-    
+
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    
+    HttpModule
+
 
   ],
   bootstrap: [IonicApp],
@@ -74,14 +78,16 @@ import { TabProfilePage } from "../pages/tab-profile/tab-profile";
     WinPage,
     TimerComponent,
     TabProfilePage,
-    
+
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     NativeAudio,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    HttpModule,
+    File
   ]
 })
 export class AppModule { }

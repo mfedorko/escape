@@ -1,10 +1,8 @@
-
-
 <ion-header>
   <ion-navbar>
 
-   
-    <ion-title>  <img class="img" align="center"  src="assets/img/logo-black-small.png" /></ion-title>
+
+    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -12,18 +10,19 @@
   <p>
     Kromě tebe pomáhala tvému novému kamarádovi se snazším přechodem na VŠE i jedna další duše z Oddělení Zahraničních Styků.
     Což tě přivádí k vzpomínkám na předchozí noc, kde jsi měl/a “geniální” nápad spojit dva alkoholické nápoje (v barvách
-    typických pro jeho zemi) v jeden společný drink - tzv magické oko. Při placení buddíkovi vypadl z peněženky čtyřlístek pro štěstí.
+    typických pro jeho zemi) v jeden společný drink - tzv magické oko. Při placení buddíkovi vypadl z peněženky čtyřlístek
+    pro štěstí.
 
 
   </p>
   <h4>Úkol</h4>
   <p>Zadej její křestní jméno, pomůže ti jmenovka na dveřích její kanceláře.</p>
   <div *ngIf="hintLevel1()">
-      <h3>Nápověda 1</h3>
-      <p>
-        <ion-icon name="alert"></ion-icon>Prohledanou zemi je typická whiskey, čtyřlístky a leprikóni.
-      </p>
-    </div>
+    <h3>Nápověda 1</h3>
+    <p>
+      <ion-icon name="alert"></ion-icon>Prohledanou zemi je typická whiskey, čtyřlístky a leprikóni.
+    </p>
+  </div>
   <ion-list>
 
     <ion-item>
@@ -32,12 +31,15 @@
     </ion-item>
   </ion-list>
   <ion-row>
-      <ion-col>
-        <button ion-button (click)="goToOtherPage()">Odpovědět</button>
-      </ion-col>
-      <ion-col>
-        <button ion-button (click)="reallyHintAlert()">Nápověda</button>
-      </ion-col>
-    </ion-row>
+    <ion-col>
+      <button ion-button (click)="goToOtherPage()">Odpovědět</button>
+    </ion-col>
+    <ion-col *ngIf="hintLevel1() == false">
+      <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+    </ion-col>
+    <ion-col *ngIf="hintLevel1()">
+      <button ion-button (click)="reallySkipAlert()">Přeskočit úkol</button>
+    </ion-col>
+  </ion-row>
   <timer #timer timeInSeconds={{resumeTime}}></timer>
 </ion-content>

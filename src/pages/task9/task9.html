@@ -13,13 +13,13 @@
   <p>
     Když se cítiš osamělý a jsi bezradný, tak zjistíš, kto by ti mohl být nápomocný. Všichni skvělí odborníci na tebe čekají,
     někteří žíví, jiní již odpočívají. Dokonce i v osudnou noc jste tam chtěli zajít, ale měli zavřeno - tak jste se šli
-    raději najíst. Kdybyste tam ale přece jenom zašli, odpoveď na buddíkovu otázku byste našli. 
-    Najdi 311MAR, to otevře ti k odpovědi dvířka. Autor této knihy tě někdy i učil, jak zavést věci do praxe, to té doby
-    jsem netušil“
+    raději najíst. Kdybyste tam ale přece jenom zašli, odpoveď na buddíkovu otázku byste našli. Najdi 311MAR, to otevře ti
+    k odpovědi dvířka. Autor této knihy tě někdy i učil, jak zavést věci do praxe, to té doby jsem netušil“
 
   </p>
   <h4>Úkol</h4>
-  <p>Tvým úkolem je napsat celé jméno (včetně diakritiky) autora knihy, které vyplývá z básničky. Jeho iniciály jsou shodné s iniciály tvého buddíka. </p>
+  <p>Tvým úkolem je napsat celé jméno (včetně diakritiky) autora knihy, které vyplývá z básničky. Jeho iniciály jsou shodné
+    s iniciály tvého buddíka. </p>
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
@@ -37,8 +37,11 @@
       <ion-col>
         <button ion-button (click)="goToOtherPage()">Odpověď</button>
       </ion-col>
-      <ion-col>
+      <ion-col *ngIf="hintLevel1() == false">
         <button ion-button (click)="reallyHintAlert()">Nápověda</button>
+      </ion-col>
+      <ion-col *ngIf="hintLevel1()">
+        <button ion-button (click)="reallySkipAlert()">Přeskočit úkol</button>
       </ion-col>
     </ion-row>
   </ion-list>
