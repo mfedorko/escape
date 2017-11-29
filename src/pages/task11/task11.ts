@@ -8,6 +8,9 @@ import { Http } from '@angular/http';
 import { File } from '@ionic-native/file';
 
 
+
+
+
 @Component({
   selector: 'page-task11',
   templateUrl: 'task11.html'
@@ -23,6 +26,7 @@ export class Task11Page {
   headerRow: any[] = [];
   data: any[] = [];
   data1 =  ["new name1","new time1","timestamp1"];
+ dataapi: JSON;
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -37,6 +41,7 @@ export class Task11Page {
   this.resumeTime = this.navParams.get('secondsRemaining');
   }
 
+ 
   private readCsvData() {
     this.http.get('assets/vsefrovacka_db.csv')
       .subscribe(
@@ -44,6 +49,20 @@ export class Task11Page {
       err => this.handleError(err)
       );
   }
+
+  public getData(){
+    this.http.post('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka',undefined)
+    .subscribe(
+      data => this.dataapi,
+      err => this.handleError(err)
+      );
+    this.http.get('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im')
+    .subscribe(
+    data => this.dataapi,
+    err => this.handleError(err)
+    );
+  }
+
   public extractData(res) {
     let csvData = res['_body'] || '';
     let parsedData = papa.parse(csvData).data;
@@ -67,10 +86,12 @@ public writeToFile (){
     fields: this.headerRow,
     data: this.csvData
   });
-  console.log(csv);
-  console.log(this.file.createFile('filesystem:'+this.file.applicationDirectory+'/persistent/assets/vsefrovacka_db.csv',csv,true));
-console.log(this.file.applicationDirectory);
-
+  //console.log(csv);
+  //console.log(this.file.createFile('filesystem:'+this.file.dataDirectory+'/persistent/assets/vsefrovacka_db.csv',csv,true));
+  //console.log(this.file.applicationDirectory);
+  this.http.post('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka-db',this.data)
+  console.log(this.http.post('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka-db',this.data));
+  console.log(this.data);
 }
   private handleError(err) {
     console.log('something went wrong: ', err);
@@ -112,6 +133,8 @@ console.log(this.file.applicationDirectory);
       ngOnInit() {
         this.hint1 = false;
         this.hint2 = false;
+        this.getData();
+        console.log(this.dataapi);
  
         setTimeout(() => {
           this.timer.startTimer();

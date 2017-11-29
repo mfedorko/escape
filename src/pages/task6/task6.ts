@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import { Task7Page } from "../task7/task7";
+import { Task8Page } from "../task8/task8";
 import { TimerComponent } from '../timer/timer';
 import { ViewChild } from '@angular/core';
 
@@ -46,7 +46,7 @@ export class Task6Page {
     alert.addButton({
       text: 'Přeskoč',
       handler: data => {
-          this.navCtrl.push(Task7Page, {
+          this.navCtrl.push(Task8Page, {
             secondsRemaining: this.timer.getSecondsRemaining()+900
           });
       }
@@ -94,7 +94,7 @@ export class Task6Page {
     if (this.event.timeStarts != undefined && this.event.timeEnds != undefined) {
 
       if (this.event.timeStarts == '07:08') {
-        this.navCtrl.push(Task7Page, {
+        this.navCtrl.push(Task8Page, {
           secondsRemaining: this.timer.getSecondsRemaining()
         });
       } else {

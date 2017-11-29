@@ -2,31 +2,34 @@
   <ion-navbar>
 
     <button ion-button menuToggle>
-        <ion-icon name="menu">
-        </ion-icon>
-      </button>
-    <ion-title> <img class="img" align="center" src="assets/img/logo-black-small.png" /></ion-title>
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+    <ion-title>
+      <img class="img" align="center" src="assets/img/logo-black-small.png" />
+    </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <h4>Událost</h4>
   <p>
-    Nebe je modré, růže jsou rudé, moje oblíbená barva je ... Od momentu kdy ses vzbudil se ti tato věta opakuje v hlavě. Irituje
-    tě, že ji nedokážeš dokončit. Víš, že ti ji říkal tvůj buddik a víš, že měl na sobě tričko stejné barvy.
-
+    Už jsi se silami téměř u konce. Ačkoli jsi zjistil poměrně hodně informací o tvém buddíkovi, stále si nedokážeš vzpomenout
+    na jeho obličej, ani kde se vaše cesty rozešly a jak ten večer skončil. Chceš rezignovat, dáš si v trucu ruce do kapes
+    a vydáš se pryč. Najednou v jedné z kapes objevíš zmuchlaný papírek, bezmyšlenkovitě ho chceš vyhodit do nejbližšího
+    koše, ale něco tě zarazí. Rozbalíš ho a přečteš si ručně psaný vzkaz. Stojí na něm:
   </p>
   <h4>Úkol</h4>
-  <p>Pokud chceš mít klid, najdi tabuli ve škole a urč její barvu</p>
+  <p> Napiš místo vašeho setkání vyplývající ze vzkazu!</p>
   <img class="img" align="center" src="assets/img/tabule.png" />
   <ion-list>
     <div *ngIf="hintLevel1()">
       <h3>Nápověda 1</h3>
       <p>
-        <ion-icon name="alert"></ion-icon>VLOŽ TEXT NÁPOVĚDY SEM
+        <ion-icon name="alert"></ion-icon>Odpověď se skládá ze 3 slov (viz logo). 
       </p>
     </div>
     <ion-item>
-      <ion-label floating>Barva</ion-label>
+      <ion-label floating>Název místa</ion-label>
       <ion-input type="text" [(ngModel)]="answer"></ion-input>
     </ion-item>
 

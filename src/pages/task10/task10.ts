@@ -86,7 +86,7 @@ export class Task10Page {
   goToOtherPage() {
     console.log(this.answer);
     if (this.answer != undefined) {
-      if (this.answer.toUpperCase() == "ZELENÁ") {
+      if (this.answer.toUpperCase() == "CAFÉ BAR DEŠTNÍK") {
         this.navCtrl.push(TabProfilePage, {
           secondsRemaining: this.timer.getSecondsRemaining()
         }
