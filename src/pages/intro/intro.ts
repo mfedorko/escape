@@ -4,6 +4,8 @@ import { HomePage } from "../home/home";
 import { TabProfilePage } from "../tab-profile/tab-profile";
 import { Task5Page } from "../task5/task5";
 import { Task11Page } from "../task11/task11";
+import { ScoreboardPage } from "../scoreboard/scoreboard";
+import { WinPage } from "../winpage/winpage";
  
 @IonicPage()
 @Component({
@@ -27,6 +29,15 @@ goToTask11(){
   this.navCtrl.setRoot(Task11Page);
 }
   goToTab(){
-    this.navCtrl.setRoot(TabProfilePage);
+    this.navCtrl.setRoot(TabProfilePage)
   }
+
+  goToScore(){
+    this.navCtrl.setRoot(ScoreboardPage)
+  }
+
+  goToWin(){
+    this.navCtrl.setRoot(WinPage);
+  }
+  
 }

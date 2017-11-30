@@ -27,6 +27,8 @@ export class Task11Page {
   data: any[] = [];
   data1 =  ["new name1","new time1","timestamp1"];
  dataapi: JSON;
+ dataToSend : JSON;
+
   @ViewChild(TimerComponent) timer: TimerComponent;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -49,13 +51,27 @@ export class Task11Page {
       err => this.handleError(err)
       );
   }
+public createStorage() {
+
+  this.http.post('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka',undefined)
+  .subscribe(
+    data => this.dataapi,
+    err => this.handleError(err)
+    );
+}
+
+public postData(data: JSON, key: string){
+  this.http.put('https://api.apify.com/v2/key-value-stores/hcaoAPzTxQAb8LNAX/records/'+key,data)
+  .subscribe(
+    data => this.dataapi,
+    err => this.handleError(err)
+    );
+
+}
+
 
   public getData(){
-    this.http.post('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka',undefined)
-    .subscribe(
-      data => this.dataapi,
-      err => this.handleError(err)
-      );
+   
     this.http.get('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im')
     .subscribe(
     data => this.dataapi,
@@ -77,8 +93,10 @@ export class Task11Page {
   }
 public prepareData(){
   
-console.log(this.csvData.push(this.data1));  
-console.log(this.csvData);
+//console.log(this.csvData.push(this.data1));  
+//console.log(this.csvData);
+console.log(this.dataToSend= JSON.parse(JSON.stringify(this.data1)));
+
 
 }
 public writeToFile (){

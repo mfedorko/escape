@@ -24,6 +24,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
 import { TabProfilePage } from "../pages/tab-profile/tab-profile";
 import { HttpModule } from '@angular/http';
 import { File } from '@ionic-native/file';
+import { ScoreboardPage } from "../pages/scoreboard/scoreboard";
 
 
 
@@ -46,7 +47,7 @@ import { File } from '@ionic-native/file';
     WinPage,
     TimerComponent,
     TabProfilePage,
-    
+    ScoreboardPage,
 
 
   ],
@@ -78,6 +79,7 @@ import { File } from '@ionic-native/file';
     WinPage,
     TimerComponent,
     TabProfilePage,
+    ScoreboardPage,
 
 
   ],

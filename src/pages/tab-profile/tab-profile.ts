@@ -37,69 +37,69 @@ export class TabProfilePage {
     public alertCtrl: AlertController) {
     this.user1 = {
       photoURL: 'assets/img/user1.png',
-      age: "22",
-      nationality: "dánská",
-      zodiacsign: "beran",
-      drink: "vodka",
-      faculty: "FIS",
-      name: "idk",
-      sibblings: "0"
+      age: "23",
+      nationality: "Irsko",
+      zodiacsign: "Lev",
+      drink: "Martini",
+      faculty: "Aplikované statistické metody",
+      name: "Lonán Moore",
+      sibblings: "4 bratři, 1 sestra"
     };
 
     this.user2 = {
       photoURL: 'assets/img/user2.png',
-      age: "23",
-      nationality: "sv",
-      zodiacsign: "bervvvvan",
-      drink: "vodvvvvka",
-      faculty: "FIvvS",
-      name: "vvidk",
-      sibblings: "0222"
+      age: "25",
+      nationality: "Velká Británie",
+      zodiacsign: "Lev",
+      drink: "Whiskey",
+      faculty: "Umělá inteligence",
+      name: "Lance McRae",
+      sibblings: "4 sestry, 1 bratr"
     };
 
     this.user3 = {
       photoURL: 'assets/img/user3.png',
       age: "24",
-      nationality: "svaa",
-      zodiacsign: "bervavvvan",
-      drink: "vodvaaavvvka",
-      faculty: "FIvvaaS",
-      name: "vviaadk",
-      sibblings: "022aa2"
+      nationality: "Belgie",
+      zodiacsign: "Lev",
+      drink: "GuldenDraak",
+      faculty: "Cestovní ruch",
+      name: "Lubos Milligan",
+      sibblings: "4 bratři, 1 sestra"
     };
 
     this.user4 = {
       photoURL: 'assets/img/user4.png',
-      age: "24",
-      nationality: "svaa",
-      zodiacsign: "bervvvaassvan",
-      drink: "vodvvvvsdsdska",
-      faculty: "FIvvddS",
-      name: "vvidddk",
-      sibblings: "022dd2"
+      age: "19",
+      nationality: "Skotsko",
+      zodiacsign: "Lev",
+      drink: "Rum",
+      faculty: "Business Inteligence",
+      name: "Lamont Meaney",
+      sibblings: "4 sestry, 1 bratr"
     };
 
     this.user5 = {
       photoURL: 'assets/img/user5.png',
-      age: "25",
-      nationality: "sssdv",
-      zodiacsign: "bervvdssfvvan",
-      drink: "vodvfsffsffssvvvka",
-      faculty: "FIvffssvS",
-      name: "vvisffdk",
-      sibblings: "02sfffs22"
+      age: "26",
+      nationality: "Irsko",
+      zodiacsign: "Lev",
+      drink: "Martini",
+      faculty: "Diplomacie",
+      name: "Langfort Mctaggart",
+      sibblings: "4 bratři, 1 sestra"
     };
 
 
     this.user6 = {
       photoURL: 'assets/img/user6.png',
       age: "26",
-      nationality: "sasav",
-      zodiacsign: "bervvsaasasvvan",
-      drink: "vodvvvsasasasassavka",
-      faculty: "FIvvsasasasS",
-      name: "vvisaasassdk",
-      sibblings: "022sasass2"
+      nationality: "Francie",
+      zodiacsign: "Panna",
+      drink: "víno",
+      faculty: "Rekreologie",
+      name: "Luboslava Nováková",
+      sibblings: "5 bratrů"
     };
 
     this.resumeTime = this.navParams.get('secondsRemaining');
