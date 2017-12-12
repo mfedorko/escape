@@ -6,12 +6,7 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx';
 
 
-/**
- * Generated class for the ScoreboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -21,27 +16,33 @@ import 'rxjs/Rx';
 export class ScoreboardPage {
   players: any[] = [];
   arr : any[] = [];
-  player: { name?: string, time?: string, timestamp?: string } = {};
+  player: { name?: string, time?: string, timeUnf?:string, timestamp?: string } = {};
+  currentPlayer: { name?: string, time?: string, timestamp?: string } = {};
   dataStorage: any;
   dataToSend: JSON;
   dataapi: any;
   dataKeys: any;
   dataString: string;
+  newObject : object;
   @ViewChild(TimerComponent) timer: TimerComponent;
 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, ) {
+    this.currentPlayer = this.navParams.get('player');
     this.player = {
       name: "testname",
       time: "testTime",
+      timeUnf : "test",
       timestamp: "testTimestamp"
     };
-    this.createStorage();
     
+   this.createStorage();
+  //  this.deleteStorage();
+  // this.deleteData();
    this.fetchData();
      
-
+console.log(this.players);
 
   }
   ngOnInit() {
@@ -55,15 +56,24 @@ export class ScoreboardPage {
   }
   public createStorage() {
 
-    this.http.post('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka', undefined)
+    this.http.post('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka-test', undefined)
       .subscribe(
       data => this.dataStorage,
       err => this.handleError(err)
       );
       
   }
-
+  public deleteStorage() {
+    
+        this.http.delete('https://api.apify.com/v2/key-value-stores?token=wRgs64jJ6QLATL34bFiR3T7im&name=vsefrovacka', undefined)
+          .subscribe(
+          data => this.dataStorage,
+          err => this.handleError(err)
+          );
+          
+      }
   public postData(data: JSON, key: string) {
+    
     this.http.put('https://api.apify.com/v2/key-value-stores/hcaoAPzTxQAb8LNAX/records/' + key, data)
       .subscribe(
       data => this.dataapi,
@@ -71,7 +81,15 @@ export class ScoreboardPage {
       );
 
   }
-
+  public getKeysToDelete() {
+    
+        this.http.get('https://api.apify.com/v2/key-value-stores/hcaoAPzTxQAb8LNAX/keys').subscribe(
+          data => this.handleDelete(data)
+          ,
+          err => this.handleError(err)
+          );
+      }
+    
 
   public getKeys() {
 
@@ -82,6 +100,15 @@ export class ScoreboardPage {
       );
   }
 
+  private deleteValue(key){
+ //  key=9;
+    this.http.delete('https://api.apify.com/v2/key-value-stores/hcaoAPzTxQAb8LNAX/records/'+key).subscribe(
+      data => this.handleDelete(data)
+      ,
+      err => this.handleError(err)
+      );
+  
+  }
 private getValue(key){
   this.http.get('https://api.apify.com/v2/key-value-stores/hcaoAPzTxQAb8LNAX/records/'+key).subscribe(
     data => this.handleKeyData(data)
@@ -91,33 +118,66 @@ private getValue(key){
 
 }
 
+public deleteData (){
+  console.log("fetching data has starterd")
+  this.getKeysToDelete();
+  
+}
+ 
+
 public fetchData (){
   console.log("fetching data has starterd")
   this.getKeys();
   
-  console.log(this.players);
+
  
 
 }
 
+private handleDelete(data){
+  
+    this.dataKeys = data.json().data.items.length;
+  
+    for (var i=0; i<=this.dataKeys; i++) {
+      this.deleteValue(i);
+      
+      setTimeout(1100);
+    }
+  }
 private handleData(data){
 
   this.dataKeys = data.json().data.items.length;
-  console.log(this.dataKeys+" this was a datakey");
-  for (var i=1; i<=this.dataKeys; i++) {
+
+  for (var i=0; i<=this.dataKeys; i++) {
     this.getValue(i);
   }
+  //sort here
+  this.players.sort(function(obj1, obj2) {
+    // Ascending: first age less than the previous
+    return obj1.timeUnf - obj2.timeUnf;
+  });
 }
 
 private handleKeyData(data){
+  var newPlayer = Object.create(this.player);
   this.dataString = data.json().toString();
   this.arr= this.dataString.split(",");
-  this.player.name= this.arr[0];
-  this.player.time = this.arr[1];
-  this.player.timestamp = this.arr[2];
-    this.players.push(this.player)
-    console.log(data.json()+" this was a datakey in key data");
-    console.log(this.player);
+  
+  newPlayer.name= data.json().name;
+ var time=  data.json().time
+ newPlayer.timeUnf=data.json().time;
+ //(x - x % y) / y;
+ var hours = (time - time%3600)/3600;
+ time = time%3600;
+ var minutes = (time - time%60)/60;
+ var seconds = Math.round(time%60);
+ newPlayer.time = hours +"h "+minutes+"min "+seconds+" s";
+
+  var datum = new Date(data.json().timestamp)
+  newPlayer.timestamp = datum.getDate() + "."+ (datum.getMonth()+1)+". "+datum.getFullYear();
+  this.players.push(newPlayer);
+  setTimeout(500);
+  
   }
   private handleError(err) {
     console.log('something went wrong: ', err);

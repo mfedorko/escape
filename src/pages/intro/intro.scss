@@ -8,8 +8,27 @@
          font-size: 2em;
        }
    
-    html{
-      font-size:1rem;	
+   
+    html {
+      font-size: 12px;
+    }
+    
+    @include media-breakpoint-up(sm) {
+      html {
+        font-size: 14px;
+      }
+    }
+    
+    @include media-breakpoint-up(md) {
+      html {
+        font-size: 18px;
+      }
+    }
+    
+    @include media-breakpoint-up(lg) {
+      html {
+        font-size: 18px;
+      }
     }
 
 

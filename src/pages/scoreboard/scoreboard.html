@@ -1,9 +1,4 @@
-<!--
-  Generated template for the ScoreboardPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -15,20 +10,28 @@
 
 <ion-content padding>
 
- <ion-grid>
-   <ion-row>
-     <ion-col col-auto><h4>Name</h4></ion-col>
-     <ion-col col-auto><h4>Time</h4></ion-col>
-     <ion-col col-auto><h4>Finished</h4></ion-col>
-   </ion-row>
-   <ion-content>
-      <ion-list>
-        <ion-item *ngFor="let player of players">
-          <label for="player.name"></label>
-        </ion-item>
-      </ion-list>
-    </ion-content>
- 
-    </ion-grid>
-
+  <ion-grid>
+    <ion-row >
+      <ion-col  >
+        <h4>Jméno</h4>
+      </ion-col>
+      <ion-col >
+        <h4>Čas</h4>
+      </ion-col>
+      <ion-col >
+        <h4 >Odehráno</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let player of players">
+      <ion-col >
+        {{player.name}}
+      </ion-col>
+      <ion-col >
+        {{player.time}}
+      </ion-col>
+      <ion-col >
+        {{player.timestamp}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

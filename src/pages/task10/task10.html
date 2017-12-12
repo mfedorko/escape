@@ -16,20 +16,20 @@
     Už jsi se silami téměř u konce. Ačkoli jsi zjistil poměrně hodně informací o tvém buddíkovi, stále si nedokážeš vzpomenout
     na jeho obličej, ani kde se vaše cesty rozešly a jak ten večer skončil. Chceš rezignovat, dáš si v trucu ruce do kapes
     a vydáš se pryč. Najednou v jedné z kapes objevíš zmuchlaný papírek, bezmyšlenkovitě ho chceš vyhodit do nejbližšího
-    koše, ale něco tě zarazí. Rozbalíš ho a přečteš si ručně psaný vzkaz. Stojí na něm:
+    koše, ale něco tě zarazí. Rozbalíš ho a přečteš si ručně psaný vzkaz. 
   </p>
   <h4>Úkol</h4>
-  <p> Napiš místo vašeho setkání vyplývající ze vzkazu!</p>
+  <p>Zajdi na místo vašeho setkání vyplývajícího ze vzkazu. V odpovědi uveď součet písmen slov v logu. </p>
   <img class="img" align="center" src="assets/img/tabule.png" />
   <ion-list>
     <div *ngIf="hintLevel1()">
-      <h3>Nápověda 1</h3>
+      <h3>Nápověda</h3>
       <p>
-        <ion-icon name="alert"></ion-icon>Odpověď se skládá ze 3 slov (viz logo). 
+        <ion-icon name="alert"></ion-icon>Odpověď se skládá ze 3 slov. Jedná se o jedno z restauračních zařízení na půdě VŠE. 
       </p>
     </div>
     <ion-item>
-      <ion-label floating>Název místa</ion-label>
+      <ion-label floating>Součet</ion-label>
       <ion-input type="text" [(ngModel)]="answer"></ion-input>
     </ion-item>
 

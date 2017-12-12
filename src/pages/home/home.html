@@ -35,9 +35,9 @@
 
   </p>
   <div *ngIf="hintLevel1()">
-    <h3>Nápověda 1</h3>
+    <h3>Nápověda</h3>
     <p>
-      <ion-icon name="alert"></ion-icon> Zkus zkombinovat počet knoflíků na kabátu a počet děr na knoflíky na klopě kabátu.
+      <ion-icon name="alert"></ion-icon> Den je třetí mocnina měsíce.
     </p>
   </div>
 
@@ -45,7 +45,7 @@
  
   <ion-list>
     <ion-item>
-      <ion-label>Datum party</ion-label>
+      <ion-label>Datum akce</ion-label>
       <ion-datetime displayFormat="DD. MMMM" pickerFormat="DD. MMMM" [(ngModel)]="this.event.timeEnds"></ion-datetime>
     </ion-item>
 
@@ -63,7 +63,6 @@
 
 
     <timer #timer timeInSeconds="1"></timer>
-    <p font-size="2px">
-      <ion-icon name="information"></ion-icon> Velmi dobře si pamatuj odpovědi na jednotlivé otázky. Budou se ti hodit na konci hry.</p>
+   
   </ion-list>
 </ion-content>

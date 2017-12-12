@@ -36,7 +36,7 @@ export class TabProfilePage {
     public navParams: NavParams,
     public alertCtrl: AlertController) {
     this.user1 = {
-      photoURL: 'assets/img/user1.png',
+      photoURL: 'assets/img/user1.jpg',
       age: "23",
       nationality: "Irsko",
       zodiacsign: "Lev",
@@ -47,7 +47,7 @@ export class TabProfilePage {
     };
 
     this.user2 = {
-      photoURL: 'assets/img/user2.png',
+      photoURL: 'assets/img/user2.jpg',
       age: "25",
       nationality: "Velká Británie",
       zodiacsign: "Lev",
@@ -58,7 +58,7 @@ export class TabProfilePage {
     };
 
     this.user3 = {
-      photoURL: 'assets/img/user3.png',
+      photoURL: 'assets/img/user3.jpg',
       age: "24",
       nationality: "Belgie",
       zodiacsign: "Lev",
@@ -69,7 +69,7 @@ export class TabProfilePage {
     };
 
     this.user4 = {
-      photoURL: 'assets/img/user4.png',
+      photoURL: 'assets/img/user4.jpg',
       age: "19",
       nationality: "Skotsko",
       zodiacsign: "Lev",
@@ -80,19 +80,19 @@ export class TabProfilePage {
     };
 
     this.user5 = {
-      photoURL: 'assets/img/user5.png',
+      photoURL: 'assets/img/user5.jpg',
       age: "26",
       nationality: "Irsko",
       zodiacsign: "Lev",
       drink: "Martini",
       faculty: "Diplomacie",
-      name: "Langfort Mctaggart",
+      name: "Langforta Mctaggart",
       sibblings: "4 bratři, 1 sestra"
     };
 
 
     this.user6 = {
-      photoURL: 'assets/img/user6.png',
+      photoURL: 'assets/img/user6.jpg',
       age: "26",
       nationality: "Francie",
       zodiacsign: "Panna",

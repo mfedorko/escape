@@ -58,6 +58,9 @@ export class WinPage {
       data => this.dataapi,
       err => this.handleError(err)
       );
+      this.navCtrl.push(ScoreboardPage, {
+        player: this.player
+      });
       console.log(data);
 
   }

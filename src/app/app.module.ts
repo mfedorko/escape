@@ -17,13 +17,11 @@ import { Task7Page } from "../pages/task7/task7";
 import { Task8Page } from "../pages/task8/task8";
 import { Task9Page } from "../pages/task9/task9";
 import { Task10Page } from "../pages/task10/task10";
-import { Task11Page } from "../pages/task11/task11";
 import { WinPage } from "../pages/winpage/winpage";
 import { TimerComponent } from '../pages/timer/timer';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { TabProfilePage } from "../pages/tab-profile/tab-profile";
 import { HttpModule } from '@angular/http';
-import { File } from '@ionic-native/file';
 import { ScoreboardPage } from "../pages/scoreboard/scoreboard";
 
 
@@ -43,7 +41,6 @@ import { ScoreboardPage } from "../pages/scoreboard/scoreboard";
     Task8Page,
     Task9Page,
     Task10Page,
-    Task11Page,
     WinPage,
     TimerComponent,
     TabProfilePage,
@@ -75,7 +72,6 @@ import { ScoreboardPage } from "../pages/scoreboard/scoreboard";
     Task8Page,
     Task9Page,
     Task10Page,
-    Task11Page,
     WinPage,
     TimerComponent,
     TabProfilePage,
@@ -89,7 +85,7 @@ import { ScoreboardPage } from "../pages/scoreboard/scoreboard";
     NativeAudio,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     HttpModule,
-    File
+  
   ]
 })
 export class AppModule { }
